@@ -24,7 +24,7 @@ const OurHelp = () => {
 
         {/* LIST OF SERVICES */}
         <div className="mt-[40px] grid grid-cols-3 gap-5">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
             <div
               key={item}
               className="max-w-[420px] border border-[#030303] rounded-[5px] px-[17px] py-[20px]"
