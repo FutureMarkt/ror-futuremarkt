@@ -18,7 +18,7 @@ const Section = ({
   return (
     <section
       id={id}
-      className={`flex justify-center w-full h-[100vh] ${
+      className={`flex justify-center w-full min-h-[100vh] pb-[120px] ${
         theme === "dark"
           ? "bg-[#030303] text-[#F7F7F7]"
           : "bg-[#DFDFDF] text-[#030303]"
@@ -29,12 +29,12 @@ const Section = ({
           customHeader
         ) : (
           <div
-            className={`mt-12 uppercase text-[64px] text-center ${affectBold700.className}`}
+            className={`mt-12 uppercase text-2xl text-center ${affectBold700.className}`}
           >
             <h1>{header}</h1>
           </div>
         )}
-        <div className={`mt-[60px] text-[20px] ${ppNeueMont500.className}`}>
+        <div className={`mt-[60px] text-lg ${ppNeueMont500.className}`}>
           {children}
         </div>
       </div>
