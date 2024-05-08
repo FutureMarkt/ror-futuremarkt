@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <section
       id="header"
-      className="flex justify-center w-full h-[100vh] bg-[#030303]"
+      className="flex justify-center w-full h-[100vh] relative bg-[#030303]"
     >
       <div className="mx-auto w-[1300px] text-[#F7F7F7]">
         {/* NAVIGATION */}
@@ -44,7 +44,7 @@ const Header = () => {
             >
               [НАПИСАТЬ В ТЕЛЕГРАМ
               <Image
-                src={"/_header/arrow-side-yellow.png"}
+                src={"/arrow-side-yellow.png"}
                 width={16}
                 height={16}
                 alt="arrow"
@@ -93,7 +93,7 @@ const Header = () => {
               <div className={`flex items-center uppercase text-[#030303]`}>
                 Получить бесплатную консультацию{" "}
                 <Image
-                  src="/_header/arrow-side-dark.png"
+                  src="/arrow-side-dark.png"
                   width={16}
                   height={16}
                   alt="arrow"
