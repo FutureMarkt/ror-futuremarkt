@@ -13,23 +13,23 @@ const Section = ({
   header,
   customHeader = undefined,
   children,
-  theme="dark",
+  theme = "dark",
 }: SectionProps) => {
   return (
     <section
       id={id}
-      className={`flex justify-center w-full min-h-[100vh] pb-[120px] ${
+      className={`flex justify-center items-center w-full h-fit py-[120px] ${
         theme === "dark"
           ? "bg-[#030303] text-[#F7F7F7]"
           : "bg-[#DFDFDF] text-[#030303]"
       }`}
     >
-      <div className="mx-auto w-[1300px]">
+      <div className=" w-[1300px]">
         {customHeader ? (
           customHeader
         ) : (
           <div
-            className={`mt-12 uppercase text-2xl text-center ${affectBold700.className}`}
+            className={`uppercase tracking-[4px] text-2xl text-center ${affectBold700.className}`}
           >
             <h1>{header}</h1>
           </div>
