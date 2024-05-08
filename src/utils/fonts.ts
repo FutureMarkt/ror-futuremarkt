@@ -20,6 +20,11 @@ export const affectBold700 = localFont({
   weight: "700",
 });
 
+export const ppNeueMontLight500 = localFont({
+  src: "../../public/fonts/pp-neue-montreal-mono-book.woff",
+  weight: "500",
+});
+
 export const ppNeueMont500 = localFont({
   src: "../../public/fonts/PPNeueMontrealMono-Medium.otf",
   weight: "500",
