@@ -27,7 +27,7 @@ const Header = () => {
 
           {/* HEADER NAV LINKS */}
           <nav
-            className={`flex justify-between w-[584px] text-[20px] ${ppNeueMont500.className}`}
+            className={`flex justify-between w-[584px] text-lg ${ppNeueMont500.className}`}
           >
             {Object.entries(navLinks).map(([name, link]) => (
               <a key={link} href={`${link}`} className="leading-[20px]">
@@ -54,7 +54,7 @@ const Header = () => {
             </a>
             <a
               href="#"
-              className={`text-[20px] flex gap-[6px] items-center ${affect700.className}`}
+              className={`text-lg flex gap-[6px] items-center ${affect700.className}`}
             >
               RU
               <Image
@@ -69,11 +69,11 @@ const Header = () => {
 
         {/* HEADER TITLE */}
         <div
-          className={`flex flex-col items-center mt-[120px] text-[20px] tracking-[3px] ${ppNeueMont500.className}`}
+          className={`flex flex-col items-center mt-[120px] text-lg tracking-[3px] ${ppNeueMont500.className}`}
         >
           <p className={`leading-[20px]`}>Внедрение проекта за 1 месяц!</p>
           <div
-            className={`text uppercase text-[85px] text-center leading-[85px] max-w-[1300px] ${affect700.className}`}
+            className={`text uppercase text-3xl text-center leading-[85px] max-w-[1300px] ${affect700.className}`}
           >
             <h1>
               быстрая разработка
@@ -106,7 +106,7 @@ const Header = () => {
 
       {/* TICKING LINE */}
       <div
-        className={`w-[150vw] flex gap-[24px] absolute text-[#FFDE9F] text-[24px] leading-[24px] uppercase left-0 bottom-[100px] ${affect700.className}`}
+        className={`w-[150vw] flex gap-[24px] absolute text-[#FFDE9F] text-xl leading-[24px] uppercase left-0 bottom-[100px] ${affect700.className}`}
       >
         {/* CYCLES FOR TICKING LINE OUTPUT */}
         {trickerWords.map((word, index) => (
