@@ -1,35 +1,46 @@
+"use client";
+
 import Image from 'next/image';
+import { useTranslations } from 'use-intl';
 
 import { affectBold700, affectLight300, ppNeueMont500 } from '@/utils/fonts';
 
 const Footer = () => {
+  const footerIntl = useTranslations("Index.Footer");
+
   return (
-    <footer className="flex-col justify-center items-center w-full relative bg-[#DFDFDF] pb-[30px]">
+    <footer className="flex-col justify-center items-center w-full relative bg-[#DFDFDF] pb-[30px] px-[15px]">
       <div
-        className={`mx-auto w-[1300px] text-[#030303] uppercase ${affectLight300.className}`}
+        className={`max-w-[340px] md:max-w-[708px] lg:max-w-[964px] 2xl:max-w-[1300px] mx-auto text-[#030303] uppercase ${affectLight300.className}`}
       >
         <div className="flex flex-col justify-center items-center">
           <h1
-            className={`text-[197px] leading-[138.6px] tracking-[-3px] ${affectBold700.className}`}
+            className={`text-[50.35px] md:text-[108.01px] lg:text-[128px] 2xl:text-[197px] leading-[35.24px] md:leading-[75.61px] lg:leading-[138.6px] tracking-[-4px] md:tracking-[-3px] ${affectBold700.className}`}
           >
             FUTURE MARKT
           </h1>
-          <p className="uppercase text-[40px] mt-6">Digital agency</p>
+          <p className="uppercase leading-[19.67px] md:leading-[42.19px] lg:leading-[50px] text-[15.73px] md:text-[33.75px] lg:text-[40px] mt-[10px] md:mt-6">
+            Digital agency
+          </p>
         </div>
 
-        <div className="flex justify-between mt-[60px]">
-          <div className="text-lg">
-            <p className="">© Фьюче Маркт</p>
-            <p>Информация о юридическом лице</p>
-            <p className="text-xs text-[#7F7F7F]">
-              Политика конфиденциальности
+        <div className="flex gap-5 md:gap-0 flex-row-reverse md:flex-row justify-between mt-[30px] md:mt-[60px]">
+          <div className="text-xs md:text-lg leading-[14px] md:leading-5 max-w-[180px] md:max-w-none">
+            <p className="md:mt-3">{footerIntl.raw("copyright")}</p>
+            <p className="mt-[10px] md:mt-3">
+              {footerIntl.raw("legalEntityInfo")}
+            </p>
+            <p className="leading-3 text-[12px] md:text-xs mt-[10px] md:mt-3 text-[#7F7F7F]">
+              {footerIntl.raw("privacy")}
             </p>
           </div>
 
-          <div className="text-lg text-right">
-            <p className="">По всем вопросам:</p>
-            <p>
-              8 (999) 136-68-38
+          <div className="lg:max-w-[303px] 2xl:max-w-[185px] text-xs md:text-lg 2xl:text-right">
+            <p className="leading-[14px]">
+              {footerIntl.raw("forAllQuestions")}
+            </p>
+            <p className="mt-3 leading-[14px] md:leading-5">
+              {footerIntl.raw("@yarkoch")}
               <br />
               @yarkoch
             </p>
@@ -37,9 +48,9 @@ const Footer = () => {
         </div>
 
         <div
-          className={`mt-[30px] border-t border-[#030303] flex justify-between pt-[20px] normal-case text-xs leading-[17.5px] ${ppNeueMont500.className}`}
+          className={`mt-[30px] border-t border-[#030303] 2xl:flex justify-between pt-[20px] normal-case text-xs leading-[17.5px] relative hidden first-letter:${ppNeueMont500.className}`}
         >
-          <p>© Future Markt 2012–2024 All rights reserved</p>
+          <p>© Future Markt 2012–2024 {footerIntl.raw("rights")}</p>
           <a href="#" className="flex items-center">
             <Image
               src="/arrow-up-light.png"
@@ -47,31 +58,30 @@ const Footer = () => {
               height={12}
               alt="arrow up"
             />
-            Наверх
+            {footerIntl.raw("upBtn")}
           </a>
         </div>
 
-        <div className="mt-[30px] flex justify-between">
-          {Object.entries(addresses).map(([phone, addr], index) => (
-            <div
-              key={index}
-              className={`normal-case flex flex-col justify-between items-center text-xs leading-[17.5px] h-[70px] max-h-[70px] max-w-[345px] ${ppNeueMont500.className}`}
-            >
-              <p>{addr}</p>
-              <p className="">{phone}</p>
-            </div>
-          ))}
+        <div className="mt-[30px] grid gap-[18px] md:grid-cols-3">
+          {Object.entries(footerIntl.raw("addresses")).map(
+            ([phone, addr], index) => (
+              <div
+                key={index}
+                className={`normal-case flex flex-col justify-between 2xl:items-center text-xs leading-[17.5px] md:h-[95px] lg:h-[70px] md:max-w-[205px] lg:max-w-[303px] xl:max-w-[345px] lg:text-left 2xl:text-center ${
+                  index === 0 ? "md:justify-self-start" : ""
+                } ${index === 1 ? "md:justify-self-center" : ""} ${
+                  index === 2 ? "md:justify-self-end" : ""
+                } ${ppNeueMont500.className}`}
+              >
+                <p>{addr as string}</p>
+                <p className="mt-[7px] md:mt-0">{phone}</p>
+              </div>
+            )
+          )}
         </div>
       </div>
     </footer>
   );
-};
-
-const addresses = {
-  "+7 999 136 6838": "Россия, Нижний Новгород, Родионова 192В",
-  "+972 54 9965034": "Israel 90435, Zeit Shemen St 2 Efrat",
-  "+1 414 212 5484":
-    "United States of America, Continure, 1366 E Sumner St #1008, Hartford WI 53027",
 };
 
 export default Footer;
