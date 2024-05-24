@@ -81,8 +81,9 @@ const AboutUs = () => {
           <p className={`${ppNeueMontLight500.className}`}>
             {aboutUsIntl.raw("contactOnTG")}
           </p>
-
+            
           {Object.entries(aboutUsIntl.raw("contacts")).map(
+            // @ts-ignore
             ([worker, { post, link }]) => (
               <a
                 key={worker}
