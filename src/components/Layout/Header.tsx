@@ -3,21 +3,30 @@
 import anime from 'animejs';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { affect300, affect700, affectBold700, ppNeueMont500 } from '@/utils/fonts';
 
+import DropdownMenu from '../DropdownMenu';
+import LocaleSwitcher from '../LocalSwitcher';
+import MenuProvider from '../MenuContext';
+
 const Header = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const headerIntl = useTranslations("Index.Header");
 
   const wordLines: HTMLDivElement[] = [];
 
   useEffect(() => {
     animateTrickingLine(wordLines);
-  }, []);
+  });
 
   return (
     <div className="relative">
+      <MenuProvider value={{ isOpen: menuIsOpen, setIsOpen: setMenuIsOpen }}>
+        <DropdownMenu />
+      </MenuProvider>
+
       <div className="absolute z-10 right-2 top-[134px] brightness-75">
         <div className="relative w-[35px] h-[34px]">
           <Image src={"/_header/extrasmall-ruby.png"} fill alt="ruby" />
@@ -80,17 +89,7 @@ const Header = () => {
                 />
                 ]
               </a>
-              <p
-                className={`text-lg flex gap-[6px] items-center ${affect700.className}`}
-              >
-                RU
-                <Image
-                  src={"/_header/arrow-down-primary.png"}
-                  width={14}
-                  height={9}
-                  alt="arrow"
-                />
-              </p>
+              <LocaleSwitcher />
             </div>
           </div>
 
@@ -98,7 +97,12 @@ const Header = () => {
           <div className="h-6 lg:h-[66px] mt-[30px] lg:mt-0 w-full flex justify-between xl:hidden">
             {/* HEADER LOGO */}
             <div className="flex items-center gap-5">
-              <div>
+              <div
+                onClick={() => {
+                  setMenuIsOpen(true);
+                  document.body.style["overflowY"] = "hidden";
+                }}
+              >
                 <div className="w-[30px] h-[3px] bg-white"></div>
                 <div className="w-[30px] h-[3px] bg-white mt-1"></div>
               </div>
