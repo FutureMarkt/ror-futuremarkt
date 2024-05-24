@@ -1,8 +1,12 @@
 "use client";
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useState } from 'react';
+import Slider from 'react-slick';
 
 import { affect700, affectBold700, ppNeueMontLight500 } from '@/utils/fonts';
 
@@ -24,74 +28,150 @@ const OurCases = () => {
   const id = "our-cases";
   const header = ourCasesIntl.raw("title");
 
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: getShownSlides(),
+  };
+
   const customHeader: JSX.Element = (
     <div className={`text-center`}>
-      <h1 className={`uppercase text-2xl ${affectBold700.className}`}>
+      <h1
+        className={`uppercase text-[40px] md:text-2xl ${affectBold700.className}`}
+      >
         {header}
       </h1>
       <p
-        className={`mt-6 lg:text-sm 2xl:text-lg lg:leading-[18.4px] 2xl:leading-[23px] ${ppNeueMontLight500.className}`}
+        className={`mt-3 md:mt-6 lg:text-sm 2xl:text-lg md:leading-[18.4px] 2xl:leading-[23px] hidden md:block ${ppNeueMontLight500.className}`}
       >
         {ourCasesIntl.raw("description")}
+      </p>
+      <p
+        className={`mt-3 md:mt-6 text-xs lg:text-sm 2xl:text-lg leading-[16.1px] md:leading-[18.4px] 2xl:leading-[23px] block md:hidden ${ppNeueMontLight500.className}`}
+      >
+        {ourCasesIntl.rich("responsiveDescription", {
+          break: (chunks) => (
+            <>
+              {chunks}
+              <br></br>
+            </>
+          ),
+        })}
       </p>
     </div>
   );
 
   return (
-    <Section id={id} header={header} customHeader={customHeader}>
+    <Section
+      id={id}
+      header={header}
+      customHeader={customHeader}
+      customContainerStyles="max-w-none w-full"
+    >
       {/* CASES LIST */}
       <div className="mt-[60px] flex gap-5 justify-between">
-        {Object.entries(ourCasesIntl.raw("cases") as Cases).map(
-          ([title, { description, img }], index) => (
-            <div
-              key={index}
-              className={`xl:max-w-[411px] 2xl:max-w-[420px] transition-all ${
-                hoveredCase === index ? "brightness-100" : "brightness-75"
-              }`}
-              onMouseEnter={() => setHoveredCase(index)}
-              onMouseLeave={() => setHoveredCase(null)}
-            >
-              <div className="xl:max-w-[411px] 2xl:max-w-[420px] lg:h-[370px] relative">
-                <Image
-                  src={`/_our-cases/${img}`}
-                  alt={img.split(".")[0]}
-                  fill
-                  className="bg-[#1D1D1D] rounded-[5px] max-w-[420px] max-h-[370px]"
-                />
+        {/* SLIDER FOR MOBILE DEVICES */}
+        <div className="block 2xl:hidden w-[330px] md:w-[708px] lg:w-[964px]">
+          <Slider
+            {...settings}
+            className="max-w-[330px] md:max-w-[708px] lg:max-w-[964px] z-10"
+          >
+            {Object.entries(ourCasesIntl.raw("cases") as Cases).map(
+              ([title, { description, img }], index) => (
+                <div
+                  key={index}
+                  className={`max-w-[330px] md:max-w-[648px] lg:max-w-[411px] 2xl:max-w-[420px] transition-all `}
+                >
+                  <div className="md:w-[648px] lg:w-[411px] h-[330px] md:h-[370px] relative">
+                    <Image
+                      src={`/_our-cases/${img}`}
+                      alt={img.split(".")[0]}
+                      fill
+                      className="bg-[#1D1D1D] rounded-[5px] lg:object-contain"
+                    />
+                  </div>
+
+                  {/* CASE TITLE */}
+                  <h4
+                    className={`mt-3 flex justify-between items-baseline text-sm md:text-xl uppercase leading-6 tracking-[1px] cursor-pointer  w-full ${affect700.className}`}
+                  >
+                    <span className="2xl:mr-4">{title}</span>
+                    <Image
+                      src="/_our-cases/arrow-side-light.png"
+                      width={16}
+                      height={16}
+                      alt="arrow"
+                    />
+                  </h4>
+
+                  {/* CASE DESCRIPTION */}
+                  <p
+                    className={`mt-3 md:w-[648px] lg:max-w-[412px] 2xl:w-auto text-[12px] md:text-xs leading-[16.1px] text-[#F7F7F7] ${ppNeueMontLight500.className}`}
+                  >
+                    {description}
+                  </p>
+                </div>
+              )
+            )}
+          </Slider>
+        </div>
+
+        {/* DESKTOP VERSION OF CASES */}
+        <div className="hidden 2xl:flex gap-5">
+          {Object.entries(ourCasesIntl.raw("cases") as Cases).map(
+            ([title, { description, img }], index) => (
+              <div
+                key={index}
+                className={`max-w-[420px] transition-all ${
+                  hoveredCase === index ? "brightness-100" : "brightness-75"
+                }`}
+                onMouseEnter={() => setHoveredCase(index)}
+                onMouseLeave={() => setHoveredCase(null)}
+              >
+                <div className="w-[420px] h-[370px] relative">
+                  <Image
+                    src={`/_our-cases/${img}`}
+                    alt={img.split(".")[0]}
+                    fill
+                    className="bg-[#1D1D1D] rounded-[5px] object-contain"
+                  />
+                </div>
+
+                {/* CASE TITLE */}
+                <h4
+                  className={`mt-3 flex justify-between items-baseline text-xl uppercase leading-6 tracking-[1px] cursor-pointer ${affect700.className}`}
+                >
+                  <span className="2xl:mr-4">{title}</span>
+                  <Image
+                    src="/_our-cases/arrow-side-light.png"
+                    width={16}
+                    height={16}
+                    alt="arrow"
+                    className={`mb-[2px] ${
+                      hoveredCase === index ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                </h4>
+
+                {/* CASE DESCRIPTION */}
+                <p
+                  className={`mt-3 max-w-[412px] 2xl:w-auto text-xs leading-[16.1px] text-[#F7F7F7] ${ppNeueMontLight500.className}`}
+                >
+                  {description}
+                </p>
               </div>
-
-              {/* CASE TITLE */}
-              <h4
-                className={`mt-3 flex items-end text-xl uppercase leading-6 tracking-[1px] cursor-pointer ${affect700.className}`}
-              >
-                <span className="2xl:mr-4">{title}</span>
-                <Image
-                  src="/_our-cases/arrow-side-light.png"
-                  width={16}
-                  height={16}
-                  alt="arrow"
-                  className={`mb-[2px] ${
-                    hoveredCase === index ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-              </h4>
-
-              {/* CASE DESCRIPTION */}
-              <p
-                className={`mt-3 text-xs leading-[16.1px] ${ppNeueMontLight500.className}`}
-              >
-                {description}
-              </p>
-            </div>
-          )
-        )}
+            )
+          )}
+        </div>
       </div>
 
       {/* ORDER A PROJECT */}
       <div className="flex justify-center">
         <a
           href="#"
-          className=" flex items-center mt-[60px] leading-5 text-[#FFDE9F] uppercase"
+          className=" flex items-center mt-[56px] md:mt-[62px] lg:mt-[60px] text-lg leading-5 text-[#FFDE9F] uppercase"
         >
           [{ourCasesIntl.raw("orderLink")}
           <Image
@@ -106,6 +186,18 @@ const OurCases = () => {
       </div>
     </Section>
   );
+};
+
+const getShownSlides = () => {
+  if (window.innerWidth < 768) {
+    return 0.9;
+  }
+
+  if (window.innerWidth <= 1024) {
+    return 1.02;
+  } else {
+    return 2.2;
+  }
 };
 
 export default OurCases;
