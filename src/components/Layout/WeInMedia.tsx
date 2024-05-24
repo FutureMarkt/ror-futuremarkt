@@ -20,6 +20,7 @@ const WeInMedia = () => {
       <div className="flex flex-col md:flex-row gap-[30px] mt-[30px] md:mt-0">
         {/* ARTICLES */}
         {Object.entries(weInMediaIntl.raw("articles")).map(
+          // @ts-ignore
           ([title, { img, description }], index) => (
             <div
               key={index}
