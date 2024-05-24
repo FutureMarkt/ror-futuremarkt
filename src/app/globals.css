@@ -27,3 +27,15 @@
     background: rgba(0, 0, 0, 0.5);
   }
 }
+
+/* .slick-slide {
+  width: 441px !important;
+}
+
+/* .slick-track {
+  max-width: 1323px !important;
+} */ 
+
+.slick-list {
+  overflow: visible !important;
+}
