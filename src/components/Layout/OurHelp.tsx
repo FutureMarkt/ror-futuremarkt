@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { affectBold700, ppNeueMont500 } from '@/utils/fonts';
@@ -17,13 +17,14 @@ interface Filters {
 
 const OurHelp = () => {
   const id = "our-help";
+  const locale = useLocale();
 
   const ourHelpIntl = useTranslations("Index.OurHelp");
   const header = ourHelpIntl.raw("title");
   const responsiveHeader = ourHelpIntl.raw("adaptiveTitle");
 
   const [selectedFilter, setSelectedFilter] = useState(
-    "Проектная деятельность"
+    getSelectedFilter(locale)
   );
 
   const filters = Object.entries(ourHelpIntl.raw("filters") as Filters);
@@ -84,7 +85,7 @@ const OurHelp = () => {
                                 ? description
                                     .split("; ")
                                     .map((desc: string, index: number) => (
-                                      <li key={index} className="ml-[17px]">
+                                      <li key={index} className="mx-[17px]">
                                         {desc}
                                       </li>
                                     ))
@@ -106,5 +107,11 @@ const OurHelp = () => {
     </Section>
   );
 };
+
+function getSelectedFilter(locale: string) {
+  if (locale === "he") return "פעילות פרויקטית";
+  if (locale === "ru") return "Проектная деятельность";
+  return "Project Activities";
+}
 
 export default OurHelp;
