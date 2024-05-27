@@ -15,7 +15,7 @@ const DropdownMenu = () => {
   return (
     <div
       className={`absolute w-full h-[100vh] z-20 transition-all text-[#F7F7F7] bg-[#030303] overflow-hidden ${
-        isOpen ? "top-0" : "top-[-100%]"
+        isOpen ? "top-0" : "top-[-100vh]"
       }`}
     >
       <Image
@@ -68,10 +68,18 @@ const DropdownMenu = () => {
         <div
           className={`mt-[210px] md:mt-[65px] flex flex-col items-center gap-[30px] md:gap-[50px] text-sm md:text-[48px] leading-[24px] md:leading-[48px] ${ppNeueMont500.className}`}
         >
-          <a href="#">[Услуги]</a>
-          <a href="#">[Услуги]</a>
-          <a href="#">[Преимущества RoR]</a>
-          <a href="#">[Услуги]</a>
+          {Object.entries(headerIntl.raw("navLinks")).map(([name, link]) => (
+            <a
+              key={name}
+              href={`${link}`}
+              onClick={() => {
+                setIsOpen(false);
+                document.body.style["overflowY"] = "scroll";
+              }}
+            >
+              [{name}]
+            </a>
+          ))}
         </div>
 
         <LocaleSwitcher />
