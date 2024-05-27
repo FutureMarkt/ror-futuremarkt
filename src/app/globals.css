@@ -28,14 +28,27 @@
   }
 }
 
-/* .slick-slide {
-  width: 441px !important;
+@media screen and (min-width: 768px) {
+  .swiper-scrollbar {
+    display: none;
+  }
 }
 
-/* .slick-track {
-  max-width: 1323px !important;
-} */ 
+@media screen and (max-width: 767px) {
+  .swiper {
+    height: 480px;
+  }
 
-.slick-list {
-  overflow: visible !important;
+  .swiper-scrollbar {
+    display: block;
+  }
+}
+
+.swiper-scrollbar {
+  background-color: #b7b7b7 !important;
+  opacity: 1 !important;
+}
+
+.swiper-scrollbar-drag {
+  background-color: #f7f7f7 !important;
 }
