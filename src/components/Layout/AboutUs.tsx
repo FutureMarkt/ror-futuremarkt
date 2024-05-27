@@ -1,5 +1,8 @@
-import { useTranslations } from 'next-intl';
+"use client";
+
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { affectBold700, ppNeueMontLight500 } from '@/utils/fonts';
 
@@ -7,6 +10,7 @@ import Card from '../Card';
 import Section from '../Section';
 
 const AboutUs = () => {
+  const locale = useLocale();
   const aboutUsIntl = useTranslations("Index.AboutUs");
   const servicesIntl = useTranslations("Index.OtherServices");
 
@@ -29,7 +33,9 @@ const AboutUs = () => {
           {aboutUsIntl.rich("responsiveDescription", {
             span: (chunks) => (
               <>
-                <span className="text-[#4C4C4C]">{chunks}</span>
+                <span className="text-[#4C4C4C]" id="scroll-text">
+                  {chunks}
+                </span>
               </>
             ),
             break: (chunks) => (
@@ -59,10 +65,18 @@ const AboutUs = () => {
       </div>
 
       {/* CONNECT IN TELEGRAM */}
-      <div className='flex flex-col lg:flex-row justify-between mt-[100px] md:mt-[60px] 2xl:mt-[100px] xl:pt-[50px] lg:h-[101px] 2xl:h-[230px] bg-[url("/ruby.png")] bg-no-repeat bg-contain'>
-        <div className="max-w-[445px]">
+      <div className="flex flex-col lg:flex-row justify-between mt-[100px] md:mt-[60px] 2xl:mt-[100px] xl:pt-[50px] lg:h-[165px] xl:h-[230px] bg-no-repeat bg-contain relative overflow-hidden">
+        <div className="text-lg leading-[23px] opacity-[12%] w-full absolute select-none hidden lg:block">
+          <p className="text-justify">{`!DOCTYPE html PUBLIC "-//WBC//DTD XHTML 1.0 Strict//EN""http://www.<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"‹meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">‹!--[if It IE 9]>script src="http://k!DOCTYPE html PUBLIC "-//WBC//DTD XHTML 1.0 Strict//EN" "http://www.<html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="content-type" content="text/html; charset=utf-8" ‹meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> ‹!--[if It IE 9]>script src="http://html5shim.googlecode.com/svn/thtml5shim.googlecode.com/svn/t ‹title>Harrix.org - Проектьк/title>‹meta name="keywords" content="" /› ‹title>Harrix.org - /title> WBC//DTD XHTML 1.0 Strict//EN"htmWBC//DTD`}</p>
+        </div>
+        <div className="absolute w-full h-full flex justify-center md:justify-end lg:justify-center items-center lg:items-stretch lg:mt-[35px] xl:mt-[15px]">
+          <div className="w-[220px] md:w-[210px] lg:w-[130px] 2xl:w-[190px] h-[180px] md:h-[170px] lg:h-[110px] 2xl:h-[160px] relative opacity-[59%] md:opacity-100 md:mr-[80px] lg:mr-0 mb-[145px] md:mb-0">
+            <Image src={"/visibled-ruby.png"} fill alt="ruby" />
+          </div>
+        </div>
+        <div className="max-w-[445px] pt-[15px]">
           <h3
-            className={`text-[36px] lg:text-[40px] 2xl:text-[48px] leading-[36px] lg:leading-[40px] 2xl:leading-[48px] tracking-[1px] text-center md:text-left ${affectBold700.className}`}
+            className={`text-[36px] lg:text-[40px] 2xl:text-[48px] leading-[36px] lg:leading-[40px] 2xl:leading-[48px] tracking-[1px]  ${affectBold700.className} ${locale === "he" ? "text-right" : "md:text-left text-center"}`}
           >
             {aboutUsIntl.raw("haveIdea")}
           </h3>
@@ -77,11 +91,11 @@ const AboutUs = () => {
             })}
           </p>
         </div>
-        <div className="2xl:mr-[78px] mt-[80px] md:mt-12 lg:mt-0">
+        <div className="2xl:mr-[78px] mt-[80px] md:mt-12 lg:mt-0 pt-[15px]">
           <p className={`${ppNeueMontLight500.className}`}>
             {aboutUsIntl.raw("contactOnTG")}
           </p>
-            
+
           {Object.entries(aboutUsIntl.raw("contacts")).map(
             // @ts-ignore
             ([worker, { post, link }]) => (
@@ -90,14 +104,27 @@ const AboutUs = () => {
                 href={link}
                 className="flex items-center text-[#FFDE9F] mt-[17px] lg:mt-[15px] xl:mt-[17px] relative uppercase"
               >
-                [{worker},{post}{" "}
-                <Image
-                  src="/arrow-side-yellow.png"
-                  width={16}
-                  height={16}
-                  alt="arrow"
-                  className="mx-1"
-                />
+                [
+                {locale === "he" && (
+                  <Image
+                    src="/arrow-side-yellow.png"
+                    width={16}
+                    height={16}
+                    alt="arrow"
+                    className="mx-1"
+                  />
+                )}
+                {worker},{post}
+                {locale !== "he" && " "}
+                {locale !== "he" && (
+                  <Image
+                    src="/arrow-side-yellow.png"
+                    width={16}
+                    height={16}
+                    alt="arrow"
+                    className="mx-1"
+                  />
+                )}
                 ]
               </a>
             )
@@ -115,18 +142,21 @@ const AboutUs = () => {
 
         <div className="mt-[30px] md:mt-[60px] flex flex-col md:flex-row gap-6 md:gap-[21px] justify-center">
           {Object.entries(servicesIntl.raw("services")).map(
-            ([title, desc], index) => (
+            // @ts-ignore
+            ([title, {desc, link}], index) => (
               <Card
                 title={title}
                 content={desc as string}
                 key={index}
                 classes="px-[17px] py-[20px] lg:max-w-[420px] text-xs"
-                headerStyles="md:text-lg lg:text-xl leading-6"
+                headerStyles="text-[22px] md:text-lg lg:text-xl leading-6"
               >
-                <div className="mt-[30px] md:mt-4 lg:mt-[28px] flex justify-between relative">
-                  <p className="text-xs leading-[16.1px]">
+                <div
+                  className={`mt-[30px] md:mt-4 lg:mt-[28px] flex justify-between relative`}
+                >
+                  <Link href={link} className="text-xs leading-[16.1px]">
                     {servicesIntl.raw("knowMore")}
-                  </p>
+                  </Link>
                   <Image
                     src="/arrow-side-dark.png"
                     width={16}
