@@ -2,11 +2,12 @@
   "Index": {
     "Header": {
       "link": "#",
+      "digitalAgency": "digital agency",
       "navLinks": {
-        "Услуги": "#",
-        "Кейсы": "#",
-        "Преимущества RoR": "#",
-        "О нас": "#"
+        "Услуги": "#our-help",
+        "Кейсы": "#our-cases",
+        "Преимущества RoR": "#advantages-ror",
+        "О нас": "#about-us"
       },
       "messageUs": "Написать в телеграм",
       "projectImplement": "Внедрение проекта за 1 месяц!",
@@ -139,19 +140,25 @@
       "contacts": {
         "Ярослав": {
           "post": "CMO",
-          "link": "#"
+          "link": "https://t.me/yarkoch"
         },
         "Виталий": {
           "post": "product manager",
-          "link": "#"
+          "link": "https://t.me/vitkoz"
         }
       }
     },
     "OtherServices": {
       "title": "Другие наши услуги",
       "services": {
-        "Разработка web-3 проектов": "Разработка DeFi, Dao, dApp, Smart Contracts, Эдвайзеринг и консалтинг, разработка токена/крпитовалюты",
-        "Веб-дизайн": "Разработка landing page, интернет-магазина, корпоративного сайта,брендбука, Ux/Ui интерфейса"
+        "Разработка web-3 проектов": {
+          "desc": "Разработка DeFi, Dao, dApp, Smart Contracts, Эдвайзеринг и консалтинг, разработка токена/крпитовалюты",
+          "link": "https://web3.futuremarkt.com/"
+        },
+        "Веб-дизайн": {
+          "desc": "Разработка landing page, интернет-магазина, корпоративного сайта,брендбука, Ux/Ui интерфейса",
+          "link": ""
+        }
       },
       "knowMore": "Узнать подробнее"
     },
@@ -161,11 +168,13 @@
       "articles": {
         "Мощный фреймворк для создания API на Ruby": {
           "img": "grape",
-          "description": "Если вы занимаетесь разработкой веб-приложений или API, вы, вероятно, слышали о Grape — мощном фреймворке на языке программирования Ruby"
+          "description": "Если вы занимаетесь разработкой веб-приложений или API, вы, вероятно, слышали о Grape — мощном фреймворке на языке программирования Ruby",
+          "link": "https://teletype.in/@yegordv/WBkP1wGDHoc"
         },
         "Разработка чат-ботов с использованием Ruby": {
           "img": "robot",
-          "description": "Ruby делает разработку чат-ботов быстрой и простой. В этой статье мы рассмотрим преимущества Ruby для разработки чат-ботов с примерами кода"
+          "description": "Ruby делает разработку чат-ботов быстрой и простой. В этой статье мы рассмотрим преимущества Ruby для разработки чат-ботов с примерами кода",
+          "link": "https://tproger.ru/articles/razrabotka-chat-botov-s-ispolzovaniem-ruby"
         }
       },
       "videoLink": "#",
@@ -178,6 +187,7 @@
       "leaveReqLink": "оставить заявку"
     },
     "Footer": {
+      "digitalAgency": "digital agency",
       "copyright": "© Фьюче Маркт",
       "legalEntityInfo": "Информация о юридическом лице",
       "privacy": "Политика конфиденциальности",
