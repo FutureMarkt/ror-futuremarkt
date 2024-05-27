@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import { affectBold700, ppNeueMontLight500 } from '@/utils/fonts';
@@ -6,6 +6,7 @@ import { affectBold700, ppNeueMontLight500 } from '@/utils/fonts';
 import Section from '../Section';
 
 const RORAdvantages = () => {
+  const locale = useLocale();
   const rorIntl = useTranslations("Index.RoRAdvantages");
   const ourApproachIntl = useTranslations("Index.OurApproach");
 
@@ -25,7 +26,7 @@ const RORAdvantages = () => {
       <Section id={id} header={header} theme="light">
         {/* RoR advantages */}
         <div className="flex items-center justify-between relative mt-[30px] md:mt-0">
-          <div className="hidden md:block lg:w-[412px] xl:max-w-[640px] lg:h-[529px] xl:h-[483px]">
+          <div className="hidden md:block lg:w-[412px] xl:w-[640px] lg:h-[529px] xl:h-[483px]">
             <Image
               src="/_ror/ruby-lg.png"
               width={412}
@@ -56,7 +57,12 @@ const RORAdvantages = () => {
                   >
                     {advt}
                   </h4>
-                  <p className="mt-3 md:mt-4 leading-[18.4px] md:leading-[23px] text-sm md:text-lg text-[#4C4C4C]">
+                  <p
+                    className={`mt-3 md:mt-4 leading-[18.4px] md:leading-[23px] text-sm md:text-lg text-[#4C4C4C] ${
+                      locale === "he" ? "text-right" : ""
+                    }`}
+                    dir="ltr"
+                  >
                     {desc as string}
                   </p>
                 </div>
@@ -81,12 +87,20 @@ const RORAdvantages = () => {
                   className={`flex gap-3 md:gap-0 justify-between text-xl tracking-[1px] pb-3 md:py-[30px] border-b border-[#BDBDBD] leading-6 ${affectBold700.className}`}
                 >
                   <p>0{index + 1}</p>
-                  <div className="w-[87%] flex flex-col md:flex-row justify-between lg:ml-[175px] 2xl:ml-[419px]">
+                  <div
+                    className={`w-[87%] flex flex-col md:flex-row justify-between ${
+                      locale === "he"
+                        ? "lg:mr-[175px] 2xl:mr-[375px]"
+                        : "lg:ml-[175px] 2xl:ml-[375px]"
+                    }`}
+                  >
                     <p className="uppercase md:max-w-[193px] 2xl:max-w-full">
                       {appr}
                     </p>
                     <p
-                      className={`text-xs mt-3 md:mt-0 md:max-w-[334px] lg:max-w-[420px] leading-[16.1px] tracking-normal ${ppNeueMontLight500.className}`}
+                      className={`text-xs mt-3 md:mt-0 md:max-w-[334px] lg:max-w-[420px] leading-[16.1px] tracking-normal ${
+                        ppNeueMontLight500.className
+                      } ${locale === "he" ? "text-left" : ""}`}
                     >
                       {desc as string}
                     </p>
