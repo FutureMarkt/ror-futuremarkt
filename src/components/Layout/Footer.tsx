@@ -9,7 +9,7 @@ const Footer = () => {
   const footerIntl = useTranslations("Index.Footer");
 
   return (
-    <footer className="flex-col justify-center items-center w-full relative bg-[#DFDFDF] pb-[30px] px-[15px]">
+    <footer className="flex-col justify-center items-center w-full relative bg-[#DFDFDF] pb-[30px] px-[15px]" dir="ltr">
       <div
         className={`max-w-[340px] md:max-w-[708px] lg:max-w-[964px] 2xl:max-w-[1300px] mx-auto text-[#030303] uppercase ${affectLight300.className}`}
       >
@@ -20,13 +20,13 @@ const Footer = () => {
             FUTURE MARKT
           </h1>
           <p className="uppercase leading-[19.67px] md:leading-[42.19px] lg:leading-[50px] text-[15.73px] md:text-[33.75px] lg:text-[40px] mt-[10px] md:mt-6">
-            Digital agency
+            {footerIntl.raw("digitalAgency")}
           </p>
         </div>
 
         <div className="flex gap-5 md:gap-0 flex-row-reverse md:flex-row justify-between mt-[30px] md:mt-[60px]">
           <div className="text-xs md:text-lg leading-[14px] md:leading-5 max-w-[180px] md:max-w-none">
-            <p className="md:mt-3">{footerIntl.raw("copyright")}</p>
+            <p className="">{footerIntl.raw("copyright")}</p>
             <p className="mt-[10px] md:mt-3">
               {footerIntl.raw("legalEntityInfo")}
             </p>
@@ -48,12 +48,12 @@ const Footer = () => {
         </div>
 
         <div
-          className={`mt-[30px] border-t border-[#030303] 2xl:flex justify-between pt-[20px] normal-case text-xs leading-[17.5px] relative hidden first-letter:${ppNeueMont500.className}`}
+          className={`mt-[30px] border-t border-[#030303] 2xl:flex justify-between pt-[20px] normal-case text-xs leading-[17.5px] relative hidden ${ppNeueMont500.className}`}
         >
-          <p>© Future Markt 2012–2024 {footerIntl.raw("rights")}</p>
+          <p className={``}>© Future Markt 2012–2024 {footerIntl.raw("rights")}</p>
           <a href="#" className="flex items-center">
             <Image
-              src="/arrow-up-light.png"
+              src="/arrow-up-dark.png"
               width={12}
               height={12}
               alt="arrow up"
