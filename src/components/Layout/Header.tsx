@@ -1,11 +1,14 @@
 "use client";
 
 import anime from 'animejs';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import { affect300, affect700, affectBold700, ppNeueMont500 } from '@/utils/fonts';
+import {
+    affect300, affect700, affectBold700, affectLight300, ppNeueMont500, ppNeueMontLight500
+} from '@/utils/fonts';
 
 import DropdownMenu from '../DropdownMenu';
 import LocaleSwitcher from '../LocalSwitcher';
@@ -13,27 +16,52 @@ import MenuProvider from '../MenuContext';
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  const locale = useLocale();
   const headerIntl = useTranslations("Index.Header");
 
   const wordLines: HTMLDivElement[] = [];
 
   useEffect(() => {
-    animateTrickingLine(wordLines);
+    animateTrickingLine(wordLines, locale);
   });
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <MenuProvider value={{ isOpen: menuIsOpen, setIsOpen: setMenuIsOpen }}>
         <DropdownMenu />
       </MenuProvider>
 
-      <div className="absolute z-10 right-2 top-[134px] brightness-75">
+      {/* DESKTOP RUBY IMAGES */}
+      <Image
+        src={"/ruby.png"}
+        width={500}
+        height={400}
+        alt="big-ruby"
+        className="absolute z-10 -left-[110px] lg:-left-[105px] top-[210px] lg:top-[328px] xl:top-[220px] md:w-[240px] lg:w-[360px] 2xl:w-[500px] md:h-[180px] lg:h-[260px] 2xl:h-[400px] hidden md:block"
+      />
+      <Image
+        src={"/ruby.png"}
+        width={170}
+        height={150}
+        alt="small-ruby"
+        className="absolute z-10 right-[50px] lg:right-[80px] 2xl:right-[180px] top-[50vh] lg:top-[100px] xl:top-[180px] hidden md:block w-[100px] xl:w-[170px] h-[84px] xl:h-[150px]"
+      />
+      <Image
+        src={"/ruby.png"}
+        width={120}
+        height={100}
+        alt="extrasmall-ruby"
+        className="absolute z-10 right-[80vw] lg:right-[180px] xl:right-[400px] bottom-[105px] lg:bottom-[200px] xl:bottom-[14vh] rotate-[20deg] w-[100px] lg:w-[120px] hidden md:block"
+      />
+
+      {/* TABLET RUBY IMAGES */}
+      <div className="absolute z-10 right-2 top-[134px] brightness-75 block md:hidden">
         <div className="relative w-[35px] h-[34px]">
           <Image src={"/_header/extrasmall-ruby.png"} fill alt="ruby" />
         </div>
       </div>
-
-      <div className="absolute z-10 -left-[3px] top-[320px] -rotate-[15deg]">
+      <div className="absolute z-10 -left-[3px] top-[320px] -rotate-[15deg] block md:hidden">
         <div className="relative w-[35px] h-[34px]">
           <Image src={"/ruby.png"} fill alt="ruby" />
         </div>
@@ -54,9 +82,9 @@ const Header = () => {
                 FUTURE MARKT
               </h1>
               <p
-                className={`text-[16.73px] leading-[20.3px] tracking-[4px] ${affect300.className}`}
+                className={`text-[16.73px] leading-[20.3px] tracking-[4px] uppercase ${affectLight300.className}`}
               >
-                DIGITAL AGENCY
+                {headerIntl.raw("digitalAgency")}
               </p>
             </div>
 
@@ -74,21 +102,32 @@ const Header = () => {
             </nav>
 
             {/* CONTACT AND SET LANG LINKS */}
-            <div className="flex">
-              <a
-                href="#"
+            <div className="flex" dir="ltr">
+              <Link
+                href="https://t.me/yarkoch"
                 className={`text-[#FFDE9F] flex items-center cursor-pointer xl:ml-0 xl:mr-[38.67px] 2xl:mx-[38.67px] uppercase ${ppNeueMont500.className}`}
               >
+                {locale === "he" && (
+                  <Image
+                    src={"/arrow-side-yellow.png"}
+                    width={16}
+                    height={16}
+                    alt="arrow"
+                    className="mr-[2px]"
+                  />
+                )}
                 [{headerIntl.raw("messageUs")}
-                <Image
-                  src={"/arrow-side-yellow.png"}
-                  width={16}
-                  height={16}
-                  alt="arrow"
-                  className="ml-[2px]"
-                />
+                {locale !== "he" && (
+                  <Image
+                    src={"/arrow-side-yellow.png"}
+                    width={16}
+                    height={16}
+                    alt="arrow"
+                    className="ml-[2px]"
+                  />
+                )}
                 ]
-              </a>
+              </Link>
               <LocaleSwitcher />
             </div>
           </div>
@@ -145,7 +184,7 @@ const Header = () => {
               {headerIntl.raw("projectImplement")}
             </p>
             <div
-              className={`uppercase text-[37px] md:text-[63px] 2xl:text-3xl text-center leading-[37px] md:leading-[63px] lg:leading-[63px] xl:leading-[85px] md:max-w-[706px] lg:max-w-[1300px] ${affectBold700.className}`}
+              className={`uppercase text-[37px] md:text-[63px] 2xl:text-3xl text-center leading-[37px] md:leading-[63px] lg:leading-[63px] xl:leading-[85px] md:max-w-[706px] lg:max-w-[1300px] mt-3 ${affectBold700.className}`}
             >
               <h1 className="hidden lg:block">
                 {headerIntl.rich("title", {
@@ -188,6 +227,7 @@ const Header = () => {
                 })}
               </p>
 
+              {/* HEADER DESCRIPTION */}
               <p className="max-w-[330px] text-center leading-[14.3px] md:hidden">
                 {headerIntl.rich("description", {
                   break: (chunks) => (
@@ -198,7 +238,13 @@ const Header = () => {
                   ),
                 })}
               </p>
-              <button className="px-[26px] py-[15px] bg-[#FFDE9F] rounded-[5px] mt-4 md:mt-[48px]">
+
+              {/* ORDER CONSULTATION BUTTON */}
+              <Link
+                href={"https://t.me/dmitrypodolskyfm"}
+                className="px-[26px] py-[15px] bg-[#FFDE9F] rounded-[5px] mt-4 md:mt-[48px]"
+                dir="ltr"
+              >
                 <div className={`flex items-center uppercase text-[#030303]`}>
                   {headerIntl.raw("consultationBtn")}
                   <Image
@@ -206,20 +252,23 @@ const Header = () => {
                     width={16}
                     height={16}
                     alt="arrow"
-                    className="w-[11.33px] md:w-[16px] h-[11.33px] md:h-[16px] ml-[6px]"
+                    className="w-[11.33px] md:w-[16px] h-[11.33px] md:h-[16px] ml-[20px]"
                   />
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* TICKING LINE */}
         <div
-          className={`w-max flex gap-[24px] absolute text-[#FFDE9F] text-xl leading-[24px] uppercase left-0 bottom-[100px] ${affect700.className}`}
+          className={`w-max flex gap-[24px] absolute text-[#FFDE9F] text-xl leading-[24px] uppercase left-0 bottom-[100px] ${
+            locale === "he" ? ppNeueMontLight500 : affect700.className
+          }`}
+          dir="rtl"
         >
           {/* CYCLES FOR TICKING LINE OUTPUT */}
-          {[1, 2, 3].map((item) => (
+          {(locale === "en" ? [1, 2, 3, 4] : [1, 2, 3, 4]).map((item) => (
             <div
               key={item}
               ref={(node) => {
@@ -227,7 +276,7 @@ const Header = () => {
               }}
               className="flex gap-6"
             >
-              {trickerWords.map((word, index) => (
+              {getTrickerWords(locale).map((word, index) => (
                 <div key={index} className="">
                   {word}
                 </div>
@@ -240,20 +289,40 @@ const Header = () => {
   );
 };
 
-const trickerWords = [
+function getTrickerWords(locale: string) {
+  if (locale === "he") return trickerWordsHE;
+  if (locale === "ru") return trickerWordsRU;
+  return trickerWordsEN;
+}
+
+const trickerWordsRU = [
   "Высоконагруженные порталы",
   "CRM системы",
   "ERP",
   "Техническая поддержка проекта/обновления версий",
 ];
 
-const animateTrickingLine = (wordLines: HTMLDivElement[]) => {
+const trickerWordsEN = [
+  "High-load Portals",
+  "CRM Systems",
+  "ERP",
+  "Technical Support for Projects/Version Updates",
+];
+
+const trickerWordsHE = [
+  "פורטלים בעומס גבוה",
+  "מערכות CRM",
+  "ERP",
+  "תמיכה טכנית לפרויקט/עדכוני גרסאות",
+];
+
+const animateTrickingLine = (wordLines: HTMLDivElement[], locale: string) => {
   if (wordLines.length > 0) {
     wordLines.forEach((wordLine) => {
       anime({
         targets: wordLine,
         translateX: [0, -(wordLine.offsetWidth || 0) - 24],
-        duration: 12000,
+        duration: locale === "he" ? 12000 : 12000,
         easing: "linear",
         loop: true,
       });
