@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { useState } from 'react';
 
 import { affectBold700, ppNeueMont500 } from '@/utils/fonts';
@@ -26,6 +27,7 @@ const OurHelp = () => {
   const [selectedFilter, setSelectedFilter] = useState(
     getSelectedFilter(locale)
   );
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const filters = Object.entries(ourHelpIntl.raw("filters") as Filters);
 
@@ -34,6 +36,14 @@ const OurHelp = () => {
       id={id}
       header={header}
       adaptiveTitle={responsiveHeader}
+      lgTitle={ourHelpIntl.rich("lgTitle", {
+        break: (chunks) => (
+          <>
+            {chunks}
+            <br></br>
+          </>
+        ),
+      })}
       theme="light"
     >
       <div className="mt-[34px] md:mt-0">
@@ -42,10 +52,10 @@ const OurHelp = () => {
           {filters.map(([filter, projects]) => (
             <button
               key={filter}
-              className={`leading-4 md:leading-5 border-b-2  ${
+              className={`leading-4 md:leading-5 transition-all border-b-2 ${
                 filter === selectedFilter
                   ? "text-[#030303] border-[#030303]"
-                  : "text-[#A0A0A0] border-[#A0A0A0]"
+                  : "text-[#A0A0A0] border-[#A0A0A0] hover:text-[#030303] border-transparent"
               } `}
               onClick={() => setSelectedFilter(filter)}
             >
@@ -60,15 +70,17 @@ const OurHelp = () => {
             filters.map(([filter, cards]) => {
               if (selectedFilter === filter) {
                 return Object.entries(cards).map(
-                  ([cardTitle, { description, price }]) => {
+                  ([cardTitle, { description, price }], index) => {
                     const isList = description.split("; ").length > 1;
 
                     return (
                       <div
                         key={cardTitle}
-                        className={`md:w-full lg:max-w-[301px] 2xl:max-w-[420px] md:h-[260px] xl:h-[250px] 2xl:h-[232px] border border-[#030303] rounded-[5px] px-[17px] py-[20px] flex flex-col justify-start ${
+                        className={`md:w-full lg:max-w-[301px] 2xl:max-w-[420px] md:h-[260px] xl:h-[250px] 2xl:h-[232px] border border-[#030303] rounded-[5px] px-[17px] py-[20px] flex flex-col justify-start transition-all hover:bg-[#FFDE9F] cursor-pointer ${
                           isList ? "h-[232px]" : "h-[208px]"
                         }`}
+                        onMouseEnter={() => setHoveredCard(index)}
+                        onMouseLeave={() => setHoveredCard(null)}
                       >
                         <h3
                           className={`text-[22px] 2xl:text-xl leading-[22px] lg:leading-5 2xl:leading-6 tracking-[1px] uppercase ${affectBold700.className}`}
@@ -92,8 +104,27 @@ const OurHelp = () => {
                                 : description}
                             </ul>
                           </div>
-                          <div className="leading-[16.1px] text-xs">
-                            {ourHelpIntl.raw("from")} ${price}
+                          <div className="leading-[16.1px] text-xs flex justify-between items-center">
+                            <p>
+                              <span dir="rtl"> {ourHelpIntl.raw("from")}</span>
+                              {price.includes("per")
+                                ? ` $${price} `
+                                : ` $${price} `}
+                            </p> 
+
+                            <div
+                              className={`w-4 h-4 relative transition-all ${
+                                hoveredCard === index
+                                  ? "opacity-100"
+                                  : "opacity-0"
+                              }`}
+                            >
+                              <Image
+                                src={"/arrow-side-dark.png"}
+                                fill
+                                alt="arrow"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
