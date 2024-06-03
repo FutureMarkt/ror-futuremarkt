@@ -1,6 +1,5 @@
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { affectBold700, affectLight300, ppNeueMont500 } from '@/utils/fonts';
 
@@ -27,11 +26,13 @@ const WeInMedia = () => {
         {Object.entries(weInMediaIntl.raw("articles")).map(
           // @ts-ignore
           ([title, { img, description, link }], index) => (
-            <div
+            <a
+              href={`${link}`}
               key={index}
+              target="_blank"
               className="flex flex-col md:max-w-[334px] lg:max-w-[466px] 2xl:max-w-[635px]"
             >
-              <div className="md:w-[334px] lg:w-[466px] 2xl:w-[635px] h-[344px] md:h-[334px] lg:h-[400px] relative">
+              <div className="md:w-[334px] lg:w-[466px] 2xl:w-[635px] h-[344px] md:h-[334px] lg:h-[400px] relative duration-300 transition-all hover:brightness-75">
                 <Image
                   src={`/_we-in-media/${locale}/${img}-desktop.png`}
                   fill
@@ -70,15 +71,14 @@ const WeInMedia = () => {
                   >
                     {description}
                   </p>
-                  <Link
-                    href={`${link}`}
+                  <p
                     className={`text-xs leading-[16.1px] mt-6 ${ppNeueMont500.className}`}
                   >
                     [{weInMediaIntl.raw("readMore")}]
-                  </Link>
+                  </p>
                 </div>
               </div>
-            </div>
+            </a>
           )
         )}
       </div>
@@ -90,11 +90,15 @@ const WeInMedia = () => {
 
       {/* SOOCIAL MEDIA */}
       <div className="flex justify-center">
-        <div className="flex flex-wrap justify-center gap-4 mt-[30px] md:mt-[60px] max-w-[264px] md:max-w-none" dir="ltr">
+        <div
+          className="flex flex-wrap justify-center gap-4 mt-[30px] md:mt-[60px] max-w-[264px] md:max-w-none"
+          dir="ltr"
+        >
           {Object.entries(socialMedia).map(([icon, link]) => (
             <a
               key={link}
               href={link}
+              target="_blank"
               className="flex justify-center items-center w-[40px] md:w-[60px] h-[40px] md:h-[60px] border border-[#030303] rounded-[5px] px-[5px] py-[10px] relative"
             >
               {/* @ts-ignore */}
@@ -126,8 +130,10 @@ const WeInMedia = () => {
         </div>
 
         <div className="mt-[26px] md:mt-9 lg:mt-[60px] flex flex-col md:flex-row gap-5 md:gap-[48px] items-center">
-          <button
-            className={`py-[16.5px] px-[12.5px] md:px-[30px] max-w-[218px] md:max-w-[328px] lg:max-h-[54px] 2xl:w-[342px] 2xl:max-h-[66px] flex justify-center items-center bg-[#FFDE9F] border border-[#030303] rounded-[5px] uppercase text-xs md:text-lg ${ppNeueMont500.className}`}
+          <a
+            href={"https://t.me/yarkoch"}
+            target="_blank"
+            className={`py-[16.5px] px-[12.5px] md:px-[30px] max-w-[218px] md:max-w-[328px] lg:max-h-[54px] 2xl:w-[342px] 2xl:max-h-[66px] flex justify-center items-center bg-[#FFDE9F] border border-[#030303] rounded-[5px] uppercase text-xs md:text-lg hover:brightness-75 transition-all ${ppNeueMont500.className}`}
           >
             {questionsIntl.raw("writeTGBtn")}{" "}
             <Image
@@ -139,37 +145,6 @@ const WeInMedia = () => {
                 locale !== "he" ? "ml-4" : "mr-4"
               }`}
             />
-          </button>
-
-          <a
-            href=""
-            className={`flex items-center uppercase text-xs md:text-lg ${
-              locale === "he" ? "flex-row-reverse" : ""
-            }`}
-          >
-            {locale === "he" && (
-              <Image
-                src="/arrow-side-dark.png"
-                width={16}
-                height={16}
-                alt="arrow"
-                className={`mx-1 w-[11.33px] md:w-[16px] h-[11.33px] md:h-[16px]`}
-              />
-            )}
-            [{questionsIntl.raw("leaveReqLink")}
-            {locale !== "he" && (
-              <>
-                {" "}
-                <Image
-                  src="/arrow-side-dark.png"
-                  width={16}
-                  height={16}
-                  alt="arrow"
-                  className={`mx-1 w-[11.33px] md:w-[16px] h-[11.33px] md:h-[16px]`}
-                />
-              </>
-            )}
-            ]
           </a>
         </div>
       </div>
