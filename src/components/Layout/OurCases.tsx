@@ -123,7 +123,8 @@ const OurCases = () => {
       <div className="flex justify-center">
         <a
           href="https://t.me/yarkoch"
-          className=" flex items-center mt-[56px] md:mt-[62px] lg:mt-[60px] text-lg leading-5 text-[#FFDE9F] uppercase"
+          target="_blank"
+          className=" flex items-center mt-[56px] md:mt-[62px] lg:mt-[60px] text-lg leading-5 text-[#FFDE9F] transition-all hover:brightness-75 uppercase"
         >
           [{ourCasesIntl.raw("orderLink")}
           {locale !== "he" && (

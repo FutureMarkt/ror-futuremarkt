@@ -36,11 +36,10 @@ const RORAdvantages = () => {
               className="md:hidden lg:block 2xl:hidden"
             />
             <Image
-              src="/_ror/ruby-xl.png"
+              src={`/_ror/ruby-xl${locale === "he" ? "-he" : ""}.png`}
               width={640}
               height={483}
               placeholder="empty"
-              layout="response"
               alt="ruby"
               className="hidden 2xl:block"
             />
@@ -86,7 +85,7 @@ const RORAdvantages = () => {
                   key={index}
                   className={`flex gap-3 md:gap-0 justify-between text-xl tracking-[1px] pb-3 md:py-[30px] border-b border-[#BDBDBD] leading-6 ${affectBold700.className}`}
                 >
-                  <p>0{index + 1}</p>
+                  <p className='w-auto md:w-[40px]'>0{index + 1}</p>
                   <div
                     className={`w-[87%] flex flex-col md:flex-row justify-between ${
                       locale === "he"

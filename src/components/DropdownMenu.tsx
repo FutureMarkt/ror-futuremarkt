@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useContext } from 'react';
 
 import { ppNeueMont500 } from '@/utils/fonts';
@@ -50,7 +51,8 @@ const DropdownMenu = () => {
           </div>
 
           <a
-            href="#"
+            href="https://t.me/yarkoch"
+            target="_blank"
             className={`text-[#FFDE9F] text-xs md:text-lg flex items-center cursor-pointe uppercase ${ppNeueMont500.className}`}
           >
             [{headerIntl.raw("messageUs")}
@@ -69,7 +71,7 @@ const DropdownMenu = () => {
           className={`mt-[210px] md:mt-[65px] flex flex-col items-center gap-[30px] md:gap-[50px] text-sm md:text-[48px] leading-[24px] md:leading-[48px] ${ppNeueMont500.className}`}
         >
           {Object.entries(headerIntl.raw("navLinks")).map(([name, link]) => (
-            <a
+            <Link
               key={name}
               href={`${link}`}
               onClick={() => {
@@ -78,7 +80,7 @@ const DropdownMenu = () => {
               }}
             >
               [{name}]
-            </a>
+            </Link>
           ))}
         </div>
 

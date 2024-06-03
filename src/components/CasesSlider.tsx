@@ -75,15 +75,17 @@ const CasesSlider = () => {
 };
 
 const getShownSlides = () => {
-  if (window.innerWidth < 768) {
-    return 1;
-  }
+  try {
+    if (window.innerWidth < 768) {
+      return 1;
+    }
 
-  if (window.innerWidth <= 1024) {
-    return 1.09;
-  } else {
-    return 2.25;
-  }
+    if (window.innerWidth <= 1024) {
+      return 1.09;
+    } else {
+      return 2.25;
+    }
+  } catch (error) {}
 };
 
 export default CasesSlider;
