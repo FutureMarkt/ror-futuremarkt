@@ -1,11 +1,15 @@
+"use client";
+
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+
 import { affectBold700, ppNeueMont500 } from '@/utils/fonts';
-
-
 
 interface SectionProps {
   id: string;
   header: string;
   adaptiveTitle?: React.ReactNode;
+  lgTitle?: React.ReactNode;
   customHeader?: React.ReactNode;
   children: React.ReactNode;
   customContainerStyles?: string;
@@ -16,11 +20,21 @@ const Section = ({
   id,
   header,
   adaptiveTitle,
+  lgTitle,
   customHeader = undefined,
   children,
   customContainerStyles,
   theme = "dark",
 }: SectionProps) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.05,
+  });
+
+  useEffect(() => {
+    console.log(inView);
+  }, [inView]);
+
   return (
     <section
       id={id}
@@ -31,7 +45,10 @@ const Section = ({
       }`}
     >
       <div
-        className={`max-w-[340px] md:max-w-[708px] lg:max-w-[964px] 2xl:max-w-[1300px] mx-auto ${customContainerStyles}`}
+        className={`max-w-[340px] md:max-w-[708px] lg:max-w-[964px] 2xl:max-w-[1300px] mx-auto transition-all duration-700 ${customContainerStyles} ${
+          inView ? "translate-y-[0px] opacity-100" : "translate-y-[100px] opacity-0"
+        }`}
+        ref={ref}
       >
         {customHeader ? (
           customHeader
@@ -41,8 +58,14 @@ const Section = ({
           >
             {adaptiveTitle ? (
               <>
-                <h1 className="hidden md:block">{header}</h1>
+                <h1 className="hidden xl:block">{header}</h1>
+                <h1 className="hidden md:block xl:hidden">{lgTitle}</h1>
                 <h1 className="block md:hidden">{adaptiveTitle}</h1>
+              </>
+            ) : lgTitle ? (
+              <>
+                <h1 className="hidden md:block">{header}</h1>
+                <h1 className="hidden lg:block xl:hidden">{lgTitle}</h1>
               </>
             ) : (
               <h1>{header}</h1>
