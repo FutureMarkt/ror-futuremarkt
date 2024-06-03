@@ -80,7 +80,9 @@ const Footer = () => {
                 } ${ppNeueMont500.className}`}
               >
                 <p>{addr as string}</p>
-                <p className="mt-[7px] md:mt-0">{phone}</p>
+                <a href={`tel:${phone}`} className="mt-[7px] md:mt-0">
+                  {phone}
+                </a>
               </div>
             )
           )}
