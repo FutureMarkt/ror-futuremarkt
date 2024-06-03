@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useTranslations } from 'use-intl';
 
 import { affectBold700, affectLight300, ppNeueMont500 } from '@/utils/fonts';
@@ -9,7 +10,10 @@ const Footer = () => {
   const footerIntl = useTranslations("Index.Footer");
 
   return (
-    <footer className="flex-col justify-center items-center w-full relative bg-[#DFDFDF] pb-[30px] px-[15px]" dir="ltr">
+    <footer
+      className="flex-col justify-center items-center w-full relative bg-[#DFDFDF] pb-[30px] px-[15px]"
+      dir="ltr"
+    >
       <div
         className={`max-w-[340px] md:max-w-[708px] lg:max-w-[964px] 2xl:max-w-[1300px] mx-auto text-[#030303] uppercase ${affectLight300.className}`}
       >
@@ -19,7 +23,7 @@ const Footer = () => {
           >
             FUTURE MARKT
           </h1>
-          <p className="uppercase leading-[19.67px] md:leading-[42.19px] lg:leading-[50px] text-[15.73px] md:text-[33.75px] lg:text-[40px] mt-[10px] md:mt-6">
+          <p className="uppercase leading-[19.67px] md:leading-[42.19px] lg:leading-[50px] text-[15.73px] md:text-[33.75px] lg:text-[40px] mt-[10px] md:mt-6 tracking-[5px]">
             {footerIntl.raw("digitalAgency")}
           </p>
         </div>
@@ -35,7 +39,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="lg:max-w-[303px] 2xl:max-w-[185px] text-xs md:text-lg 2xl:text-right">
+          <div className="md:w-[205px] lg:w-[303px] 2xl:max-w-[185px] text-xs md:text-lg 2xl:text-right">
             <p className="leading-[14px]">
               {footerIntl.raw("forAllQuestions")}
             </p>
@@ -50,8 +54,10 @@ const Footer = () => {
         <div
           className={`mt-[30px] border-t border-[#030303] 2xl:flex justify-between pt-[20px] normal-case text-xs leading-[17.5px] relative hidden ${ppNeueMont500.className}`}
         >
-          <p className={``}>© Future Markt 2012–2024 {footerIntl.raw("rights")}</p>
-          <a href="#" className="flex items-center">
+          <p className={``}>
+            © Future Markt 2012–2024 {footerIntl.raw("rights")}
+          </p>
+          <Link href="#" className="flex items-center">
             <Image
               src="/arrow-up-dark.png"
               width={12}
@@ -59,7 +65,7 @@ const Footer = () => {
               alt="arrow up"
             />
             {footerIntl.raw("upBtn")}
-          </a>
+          </Link>
         </div>
 
         <div className="mt-[30px] grid gap-[18px] md:grid-cols-3">
