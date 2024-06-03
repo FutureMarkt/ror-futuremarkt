@@ -33,14 +33,14 @@ const LocaleSwitcher = () => {
           isOpenDropdown ? "flex" : "hidden"
         }`}
       >
-        <div className="absolute rounded-[5px] bg-[#030303] w-[64px] xl:w-[48px] p-2 pb-4 xl:p-1 border flex flex-col gap-2 xl:gap-0">
+        <div className="absolute z-10 rounded-[5px] bg-[#030303] w-[64px] xl:w-[48px] p-2 pb-4 xl:p-1 border flex flex-col gap-2 xl:gap-0">
           {locales.map((localeItem) => (
             <Link
               key={localeItem}
               href={`/${localeItem}`}
-              className={`text-lg md:text-[40px] lg:text-[48px] xl:text-[20px] leading-[24px] md:leading-[40px] flex gap-[6px] items-center justify-center uppercase ${
+              className={`text-lg md:text-[40px] lg:text-[48px] xl:text-[20px] leading-[24px] md:leading-[40px] flex gap-[6px] items-center justify-center uppercase hover:text-[#FFDE9F] transition-all ${
                 affect700.className
-              } ${locale === localeItem ? "border-b" : ""}`}
+              } ${locale === localeItem ? "text-[#FFDE9F]" : ""}`}
             >
               {localeItem}
             </Link>
