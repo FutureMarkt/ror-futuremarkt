@@ -11,75 +11,79 @@
       },
       "messageUs": "Message on Telegram",
       "projectImplement": "Project implementation in 1 month!",
-      "title": "Fast development of your<break></break> idea on Ruby on Rails",
-      "adaptiveTitle": "Fast<break></break> development<break></break> of your idea<break></break>  on Ruby on Rails",
+      "title": "Fast development of your<break></break> idea on Ruby on Rails",
+      "adaptiveTitle": "Fast<break></break> development<break></break> of your idea<break></break>  on Ruby on Rails",
+      "mdTitle": "Fast development<break></break> of your idea on Ruby<break></break>on Rails",
       "description": "During a free consultation,<break></break> you'll receive an analysis of potential<break></break> and a roadmap for a successful launch",
       "adaptiveDescription": "During a free consultation, you'll receive an analysis of<break></break> potential and a roadmap for a successful launch",
+      "mdDescription": "During a free consultation, you'll receive an analysis<break></break>of potential and a roadmap for a successful launch",
+      "desktopDescription": "During a free consultation, you'll receive an analysis<break></break>of potential and a roadmap for a successful launch",
       "consultationBtn": "Get a Free Consultation "
     },
     "OurHelp": {
       "link": "our-help",
       "title": "How we can assist you",
-      "adaptiveTitle": "услуги",
+      "adaptiveTitle": "Services",
+      "lgTitle": "How we can <break></break>assist you",
       "filters": {
         "Project Activities": {
           "Web Project Development": {
-            "description": "Creating high-quality and scalable web applications using the powerful and flexible framework — Ruby on Rails",
-            "price": "00 000"
+            "description": "Creating high-quality and scalable web applications using the powerful and flexible framework — Ruby on Rails",
+            "price": "10 000"
           },
           "Business Application Development": {
             "description": "Applications for optimizing business processes and increasing company efficiency",
-            "price": "00 000"
+            "price": "50 000"
           },
           "Code Audit": {
-            "description": "Analysis and evaluation of your current project for: code quality, security, scalability, and performance",
-            "price": "00 000"
+            "description": "Analysis and evaluation of your current project for: code quality, security, scalability, and performance",
+            "price": "700"
           },
           "Integration with External Systems": {
             "description": "Creating compatible and interconnected applications that interact with various external services and APIs",
-            "price": "00 000"
+            "price": "10 000"
           },
           "E-commerce Systems Development": {
             "description": "Creating flexible solutions capable of handling and processing large volumes of transactions",
-            "price": "00 000"
+            "price": "100 000"
           },
           "Upgrading and Evolving Existing Applications": {
             "description": "From making adjustments to existing code to creating a new module from scratch",
-            "price": "00 000"
+            "price": "45 per hour"
           }
         },
         "OUTSTAFFING": {
-          "Senior разработчик": {
+          "SENIOR ROR РАЗРАБОТЧИК (ROR, PostgreSQL, MySQL, Vue.js)": {
             "description": "Leads projects, designs architecture; Makes key technical decisions; Provides mentorship, explores new technologies",
-            "price": "00 000"
+            "price": "75 per hour"
           },
           "Middle разработчик": {
             "description": "Works independently, manages projects; Solves problems, optimizes processes; Mentors junior developers",
-            "price": "00 000"
+            "price": "55 per hour"
           },
           "Junior+ Developer": {
             "description": "Completes tasks under supervision; Participates in training and development; Writes code, debugs issues",
-            "price": "00 000"
+            "price": "35 per hour"
           },
           "Chief Technical Officer (CTO)": {
             "description": "Develops and implements the company's strategic technical plans; Introduces new technologies to maintain product competitiveness; Leads engineering teams",
-            "price": "00 000"
+            "price": "130 per hour"
           },
           "Project Manager": {
             "description": "Develops project plans considering resources, timelines, and budget; Manages teams to achieve objectives; Ensures adherence to deadlines and budget constraints, minimizes risks",
-            "price": "00 000"
+            "price": "80 per hour"
           },
           "Team lead": {
             "description": "Coordinates and supports team operations; Defines technical solutions and standards; Develops the team's professional skills; Ensures adherence to development processes and task deadlines",
-            "price": "00 000"
+            "price": "80 per hour"
           },
           "DEVOPS": {
             "description": "Develops and implements automation; Sets up CI/CD to enhance code quality and release speed; Configures performance monitoring",
-            "price": "00 000"
+            "price": "60 per hour"
           },
           "QA Engineer": {
             "description": "Tests products to ensure compliance with requirements; Identifies and documents bugs; Develops test plans and scenarios",
-            "price": "00 000"
+            "price": "35 per hour"
           }
         }
       },
@@ -93,15 +97,15 @@
       "cases": {
         "Improving Credit Line Features": {
           "img": "money.png",
-          "description": "Enhanced functionality and user experience within the system, ensuring more effective management of deals and credit lines"
+          "description": "Enhanced functionality and user experience within the system, ensuring more effective management of deals and credit lines"
         },
         "New Term Sheet Process": {
           "img": "term.png",
-          "description": "Optimization and improvement of project management processes related to the creation and approval of terminology sheets"
+          "description": "Optimization and improvement of project management processes related to the creation and approval of terminology sheets"
         },
         "Portal Dominion Cap": {
           "img": "dominio-cap.png",
-          "description": "Comprehensive CRM system for optimizing internal processes of providing loans in the United States of America"
+          "description": "Comprehensive CRM system for optimizing internal processes of providing loans in the United States of America"
         }
       },
       "orderLink": "Order Project "
@@ -118,31 +122,31 @@
     "OurApproach": {
       "title": "Our Approach to Work",
       "approaches": {
-        "Effective Management": "We use a version control system (Git) and provide access to our repository on platforms like GitHub or GitLab upon client request",
-        "Transparency in Work": "Using CI, Capistrano, and continuous deployment to a staging server keeps you fully informed about your project’s development process",
-        "Code Coverage for Projects": "We ensure complete code coverage of our projects with automated tests using Rspec, Capybara, and Factorybot",
-        "Monitoring and Optimization": "We perform error monitoring and resolution using Sentry and carry out performance monitoring and optimization using New Relic"
+        "Effective Management": "We use a version control system (Git) and provide access to our repository on platforms like GitHub or GitLab upon client request",
+        "Transparency in Work": "Using CI, Capistrano, and continuous deployment to a staging server keeps you fully informed about your project’s development process",
+        "Code Coverage for Projects": "We ensure complete code coverage of our projects with automated tests using Rspec, Capybara, and Factorybot",
+        "Monitoring and Optimization": "We perform error monitoring and resolution using Sentry and carry out performance monitoring and optimization using New Relic"
       }
     },
     "AboutUs": {
       "link": "about-us",
       "title": "about our company",
-      "description": "Future Markt is a digital agency that was founded in 2011. We create decentralized applications and their interfaces, develop UX/UI designs, and marketing strategies to promote projects online",
-      "responsiveDescription": "Future Markt is a digital agency that was founded in 2011. We create decentralized applications and their interfaces, develop UX/UI designs, and marketing strategies to promote projects online",
+      "description": "Future Markt is a digital agency that was founded in 2011. We create decentralized applications and their interfaces, develop UX/UI designs, and marketing strategies to promote projects online",
+      "responsiveDescription": "Future Markt is a digital agency that was founded in 2011. We create decentralized applications and their interfaces, develop UX/UI designs, and marketing strategies to promote projects online",
       "advantages": {
-        "15 years with Ruby on Rails": "Since 2009, we have been actively developing projects on Ruby on Rails, continuously expanding our experience and expertise",
-        "58 projects with RoR": "We have accumulated significant experience in developing web applications, enabling us to launch your project with minimal risks and errors",
-        "Complex tasks made easy": "We solve tasks of any complexity, including API development, large web application development, integration with external systems, and more"
+        "15 years with Ruby on Rails": "Since 2009, we have been actively developing projects on Ruby on Rails, continuously expanding our experience and expertise",
+        "58 projects with RoR": "We have accumulated significant experience in developing web applications, enabling us to launch your project with minimal risks and errors",
+        "Complex tasks made easy": "We solve tasks of any complexity, including API development, large web application development, integration with external systems, and more"
       },
       "haveIdea": "Have an idea?",
-      "sayToUs": "Tell us about it, and we’ll bring it to life with Ruby on Rails",
+      "sayToUs": "Tell us about it, and we’ll bring it to life with Ruby on Rails",
       "contactOnTG": "Contact on Telegram:",
       "contacts": {
         "Yaroslav": {
           "post": "CMO",
           "link": "https://t.me/yarkoch"
         },
-        "Vitaliy": {
+        "Vitaly": {
           "post": "product manager",
           "link": "https://t.me/vitkoz"
         }
@@ -152,7 +156,7 @@
       "title": "Our Other Services",
       "services": {
         "Web3 Project Development": {
-          "desc": "Development of DeFi, DAO, dApp, Smart Contracts, Advising and Consulting, Token/Cryptocurrency Development",
+          "desc": "Development of DeFi, DAO, dApp, Smart Contracts, Advising and Consulting, Token/Cryptocurrency Development",
           "link": "https://web3.futuremarkt.com/"
         },
         "Web Design": {
@@ -182,7 +186,7 @@
     },
     "HaveQuestions": {
       "title": "Any questions?",
-      "leaveReq": "Submit a request or message us on Telegram, and our specialists will contact you and answer any questions you may have",
+      "leaveReq": "Submit a request or message us on Telegram, and our specialists will contact you and answer any questions you may have",
       "writeTGBtn": "Message on Telegram",
       "leaveReqLink": "Submit a Request"
     },
@@ -198,7 +202,7 @@
       "addresses": {
         "+7 999 136 6838": "Russia, Nizhny Novgorod, Rodionova 192B",
         "+972 54 9965034": "Israel 90435, Zeit Shemen St 2 Efrat",
-        "+1 414 212 5484": "United States of America, Continure, 1366 E Sumner St #1008, Hartford WI 53027"
+        "+1 414 212 5484": "United States of America, Continure, 1366 E Sumner St #1008, Hartford WI 53027"
       }
     }
   }
