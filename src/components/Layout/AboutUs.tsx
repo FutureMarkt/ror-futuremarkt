@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useState } from 'react';
 
 import { affectBold700, ppNeueMontLight500 } from '@/utils/fonts';
 
@@ -10,6 +10,8 @@ import Card from '../Card';
 import Section from '../Section';
 
 const AboutUs = () => {
+  const [hoveredCard, setHoveredCard] = useState<null | number>(null);
+
   const locale = useLocale();
   const aboutUsIntl = useTranslations("Index.AboutUs");
   const servicesIntl = useTranslations("Index.OtherServices");
@@ -76,7 +78,9 @@ const AboutUs = () => {
         </div>
         <div className="max-w-[445px] pt-[15px]">
           <h3
-            className={`text-[36px] lg:text-[40px] 2xl:text-[48px] leading-[36px] lg:leading-[40px] 2xl:leading-[48px] tracking-[1px]  ${affectBold700.className} ${locale === "he" ? "text-right" : "md:text-left text-center"}`}
+            className={`text-[36px] lg:text-[40px] 2xl:text-[48px] leading-[36px] lg:leading-[40px] 2xl:leading-[48px] tracking-[1px]  ${
+              affectBold700.className
+            } ${locale === "he" ? "text-right" : "md:text-left text-center"}`}
           >
             {aboutUsIntl.raw("haveIdea")}
           </h3>
@@ -102,7 +106,8 @@ const AboutUs = () => {
               <a
                 key={worker}
                 href={link}
-                className="flex items-center text-[#FFDE9F] mt-[17px] lg:mt-[15px] xl:mt-[17px] relative uppercase"
+                target="_blank"
+                className="flex items-center text-[#FFDE9F] mt-[17px] lg:mt-[15px] xl:mt-[17px] relative uppercase transition-all hover:brightness-75"
               >
                 [
                 {locale === "he" && (
@@ -143,28 +148,36 @@ const AboutUs = () => {
         <div className="mt-[30px] md:mt-[60px] flex flex-col md:flex-row gap-6 md:gap-[21px] justify-center">
           {Object.entries(servicesIntl.raw("services")).map(
             // @ts-ignore
-            ([title, {desc, link}], index) => (
-              <Card
-                title={title}
-                content={desc as string}
+            ([title, { desc, link }], index) => (
+              <a
+                href={link}
                 key={index}
-                classes="px-[17px] py-[20px] lg:max-w-[420px] text-xs"
-                headerStyles="text-[22px] md:text-lg lg:text-xl leading-6"
+                target='_blank'
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
               >
-                <div
-                  className={`mt-[30px] md:mt-4 lg:mt-[28px] flex justify-between relative`}
+                <Card
+                  title={title}
+                  content={desc as string}
+                  classes="px-[17px] py-[20px] lg:max-w-[420px] text-xs"
+                  headerStyles="text-[22px] md:text-lg lg:text-xl leading-6"
                 >
-                  <Link href={link} className="text-xs leading-[16.1px]">
-                    {servicesIntl.raw("knowMore")}
-                  </Link>
-                  <Image
-                    src="/arrow-side-dark.png"
-                    width={16}
-                    height={16}
-                    alt="arrow"
-                  />
-                </div>
-              </Card>
+                  <div
+                    className={`mt-[30px] md:mt-4 lg:mt-[28px] flex justify-between relative`}
+                  >
+                    <p className="text-xs leading-[16.1px]">
+                      {servicesIntl.raw("knowMore")}
+                    </p>
+                    <Image
+                      src="/arrow-side-dark.png"
+                      width={16}
+                      height={16}
+                      alt="arrow"
+                      className={`transition-all ${hoveredCard === index ? "opacity-100" : "opacity-0"}`}
+                    />
+                  </div>
+                </Card>
+              </a>
             )
           )}
         </div>
