@@ -95,19 +95,36 @@
       "description": "Our projects are the best proof of our expertise",
       "responsiveDescription": "Our projects are the best proof of our expertise",
       "cases": {
-        "Improving Credit Line Features": {
-          "img": "money.png",
-          "description": "Enhanced functionality and user experience within the system, ensuring more effective management of deals and credit lines"
-        },
-        "New Term Sheet Process": {
-          "img": "term.png",
-          "description": "Optimization and improvement of project management processes related to the creation and approval of terminology sheets"
-        },
-        "Portal Dominion Cap": {
+        "portal dominion capital": {
           "img": "dominio-cap.png",
-          "description": "Comprehensive CRM system for optimizing internal processes of providing loans in the United States of America"
+          "description": "Comprehensive CRM system for optimizing internal processes of the organization for providing loans in the United States of America.",
+          "goal": "The creation of a comprehensive CRM system for optimizing internal processes for providing loans in the United States of America, including the improvement of project management processes related to the creation and approval of terminology sheets, as well as enhancing functionality and user experience for more effective management of deals and credit lines.",
+          "fullDescription": "<yellowHeader>Enhancing the Deal Workflow:</yellowHeader><whiteHeader>Dynamic Dropdown Link:</whiteHeader><break></break><paragraph>The link dynamically adapts based on the project stage, ensuring intuitive navigation for users.</paragraph><whiteHeader>Streamlined Creation and Approval:</whiteHeader><paragraph>The system creates a TermSheetApproval if it doesn't already exist. Additionally, approval processes are seamlessly managed, ensuring that TermSheetApproval progresses only when required conditions are met.</paragraph><whiteHeader>Document Management:</whiteHeader><paragraph>The system allows for downloading and uploading Term Sheets in various scenarios, ensuring a comprehensive repository for crucial documents.</paragraph><whiteHeader>Enhanced User Experience:</whiteHeader><paragraph>The user interface is designed to facilitate efficient workflows. For instance, the WireInfos selector is available when dealing with syndicates, simplifying decision-making.</paragraph><whiteHeader>Stimulus Integration:</whiteHeader><paragraph>Our system leverages the power of Stimulus controllers to enable specific actions at different stages, enhancing both user experience and document generation.</paragraph><whiteHeader>Audits and Notifications:</whiteHeader><paragraph>All stages of TermSheetApproval are equipped with an Audits table, providing an overview of activities. CustomAudits are intelligently generated and managed, keeping stakeholders informed.</paragraph><whiteHeader>Role-based Workflow:</whiteHeader><paragraph>User roles play a significant role in the process. Approvers and stakeholders are seamlessly integrated into the workflow, ensuring that the right individuals are involved at the right time.</paragraph><whiteHeader>Seamless Slack Integration:</whiteHeader><paragraph>The final stages of approval involve automatic Term Sheet download and submission to Slack, all managed through the system's frontend.</paragraph><yellowMarginHeader>Unveiling the Results</yellowMarginHeader><paragraph>Our team's dedication and expertise culminated in the successful completion of Task #1756 in just 87 hours and 54 minutes. Throughout the process, 64 files were updated, resulting in an impressive codebase transformation: +2733 additions and -819 deletions.</paragraph>",
+          "link": ""
+        },
+        "Portraits of honor": {
+          "img": "portraits-of-honor.png",
+          "description": "Holocaust Survivors from Michigan is an interactive educational exhibit of the Program for Holocaust Survivors and their Families.",
+          "goal": "The creation of an interactive educational exhibit dedicated to Holocaust survivors from Michigan, as part of the Program for Holocaust Survivors and their families, with the goal of preserving historical memory, educating future generations, and supporting survivors and their families.",
+          "fullDescription": "",
+          "link": "https://www.portraitsofhonor.org/"
+        },
+        "Loandox": {
+          "img": "loandox.png",
+          "description": "CRM system for Gu Loans, which provides loan services for various types of businesses.",
+          "goal": "It was necessary to improve the existing CRM system for Gu Loans, which provides loan services for various types of businesses.The tasks on the client side include: 1.Development of an HTML email that the client receives after submitting an application on the website 2.Development of a document upload form 3.Development of modal windows",
+          "link": "https://www.behance.net/gallery/154321453/CRM-system-for-GU-Loans"
+        },
+        "The Oleh Budget Calculator": {
+          "img": "calculator.png",
+          "description": "Development of an application for calculating and analyzing the cost of living, including transportation expenses, with dynamic visualization features and integration of real-time data.",
+          "goal": "Creation of a cost of living calculator for moving to Israel, with integration of real prices and expense databases of various cities in the country.",
+          "fullDescription": "<yellowHeader>Detailed Cost of Living Calculation:</yellowHeader><whiteHeader></whiteHeader><paragraph>Users can enter and customize various expenses such as housing, utilities, food, entertainment, healthcare, and more.</paragraph><paragraph>The application calculates the total monthly and annual cost of living based on the entered data.</paragraph><paragraph>A database of average expenses for different cities in Israel is supported for accurate calculations.</paragraph><whiteHeader>Transportation Component:</whiteHeader><paragraph>A separate section for transportation expenses, including options for public transportation and personal vehicle expenses.</paragraph><paragraph>Users can enter data about daily trips, type of vehicle, fuel consumption, and public transportation usage.</paragraph><paragraph>Integration with real-time traffic data and fuel prices for accurate expense calculations.</paragraph><whiteHeader>Dynamic Visualization:</whiteHeader><paragraph>Detailed charts and graphs to visually represent the expense structure.</paragraph><paragraph>An interactive chart that updates in real-time as users change the data.</paragraph><paragraph>Comparison tools that allow users to see how various changes affect the overall budget.</paragraph><whiteHeader>Currency Exchange Service:</whiteHeader><paragraph>A separate service for retrieving and updating currency exchange rates in real-time.</paragraph><paragraph>Users can enter expenses in different currencies, and the application automatically converts them using the latest exchange rate.</paragraph><paragraph>The service ensures accuracy and currency of the calculations.</paragraph><whiteHeader>Real-time Calculation:</whiteHeader><paragraph>As users enter or change expenses, the application instantly recalculates the total cost of living and updates the visual charts.</paragraph><paragraph>Instant feedback helps users understand the financial implications of their choices without delay.</paragraph>",
+          "link": ""
         }
       },
+      "goalText": "Goal",
+      "learnMore": "View the entire case",
       "orderLink": "Order Project "
     },
     "RoRAdvantages": {

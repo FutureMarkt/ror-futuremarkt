@@ -94,19 +94,36 @@
       "description": "הפרויקטים שלנו — ההוכחה הטובה ביותר למומחיות שלנו",
       "responsiveDescription": "Our projects are the best proof of our expertise",
       "cases": {
-        "שיפור תכונות קו האשראי": {
-          "img": "money.png",
-          "description": "שיפרנו את הפונקציונליות וחוויית המשתמש בתוך המערכת, והבטחנו ניהול יעיל יותר של עסקאות וקווי אשראי"
-        },
-        "תהליך דף התנאים החדש": {
-          "img": "term.png",
-          "description": "אופטימיזציה ושיפור תהליך ניהול הפרויקטים הקשורים ליצירה ואישור דפי תנאים"
-        },
-        "פורטל דומיניון קאפ": {
+        "portal dominion capital": {
           "img": "dominio-cap.png",
-          "description": "מערכת CRM מקיפה לאופטימיזציה של תהליכים פנימיים בארגון למתן אשראי בארצות הברית"
+          "description": "מערכת CRM מקיפה לאופטימיזציה של תהליכים פנימיים בארגון למתן הלוואות בארצות הברית.",
+          "goal": "יצירת מערכת CRM מקיפה לאופטימיזציה של תהליכים פנימיים למתן הלוואות בארצות הברית, כולל שיפור תהליכי ניהול פרויקטים הקשורים ליצירה ואישור של דפי תנאים, וכן שיפור הפונקציונליות וחוויית המשתמש לניהול יעיל יותר של עסקאות וקווי אשראי.",
+          "fullDescription": "<yellowHeader>שיפור תהליך העסקאות:</yellowHeader> <whiteHeader>קישור דינמי בתפריט נפתח:</whiteHeader> <paragraph>הקישור מתאמת דינמית בהתאם לשלב הפרויקט, ומבטיח ניווט אינטואיטיבי למשתמשים.</paragraph> <whiteHeader>יצירה ואישור יעילים:</whiteHeader> <paragraph>המערכת יוצרת TermSheetApproval אם הוא לא קיים. בנוסף, תהליכי האישור מנוהלים בצורה חלקה, מבטיחים שה-TermSheetApproval מתקדם רק כאשר מתקיימים התנאים הנדרשים.</paragraph> <whiteHeader>ניהול מסמכים:</whiteHeader> <paragraph>המערכת מאפשרת הורדה והעלאה של דפי תנאים בתרחישים שונים, ומבטיחה מאגר מקיף למסמכים קריטיים.</paragraph> <whiteHeader>חוויית משתמש משופרת:</whiteHeader> <paragraph>ממשק המשתמש מעוצב להקל על תהליכי עבודה יעילים. למשל, הסלקטור של WireInfos זמין בעת עבודה עם סינדיקטים, מה שמפשט את קבלת ההחלטות.</paragraph> <whiteHeader>שילוב Stimulus:</whiteHeader> <paragraph>המערכת שלנו מנצלת את הכוח של בקרי Stimulus לביצוע פעולות ספציפיות בשלבים שונים, ומשפרת את חוויית המשתמש ואת יצירת המסמכים.</paragraph> <whiteHeader>ביקורות והתראות:</whiteHeader> <paragraph>כל שלבי ה-TermSheetApproval מצוידים בטבלת ביקורות, המספקת סקירה של הפעילויות. CustomAudits נוצרים ומנוהלים בצורה חכמה, ומודיעים לבעלי העניין.</paragraph> <whiteHeader>תהליך עבודה מבוסס תפקידים:</whiteHeader> <paragraph>תפקידי המשתמשים ממלאים תפקיד משמעותי בתהליך. מאשרים ובעלי העניין משולבים בצורה חלקה בתהליך העבודה, ומבטיחים שהאנשים הנכונים מעורבים בזמן הנכון.</paragraph> <whiteHeader>שילוב חלק עם Slack:</whiteHeader> <paragraph>השלבים הסופיים של האישור כוללים הורדה אוטומטית של Term Sheet והגשה ל-Slack, הכל מנוהל דרך ממשק המערכת.</paragraph> <whiteHeader>חשיפת התוצאות:</whiteHeader> <paragraph>המסירות והמומחיות של הצוות שלנו הביאו להשלמה מוצלחת של משימה מספר #1756 תוך 87 שעות ו-54 דקות בלבד. במהלך התהליך, עודכנו 64 קבצים, מה שהביא לשינוי מרשים בבסיס הקוד: +2733 תוספות ו-819 מחיקות.</paragraph>",
+          "link": ""
+        },
+        "Portraits of honor": {
+          "img": "portraits-of-honor.png",
+          "description": "ניצולי השואה ממישיגן הם תערוכה חינוכית אינטראקטיבית של התוכנית לניצולי השואה ובני משפחותיהם.",
+          "goal": "The creation of an interactive educational exhibit dedicated to Holocaust survivors from Michigan, as part of the Program for Holocaust Survivors and their families, with the goal of preserving historical memory, educating future generations, and supporting survivors and their families.",
+          "fullDescription": "",
+          "link": "https://www.portraitsofhonor.org/"
+        },
+        "Loandox": {
+          "img": "loandox.png",
+          "description": "מערכת CRM עבור Gu Loans, המספקת שירותי הלוואות לסוגים שונים של עסקים.",
+          "goal": "היה צורך לשפר את מערכת ה-CRM הקיימת עבור Gu Loans, המספקת שירותי הלוואות לסוגים שונים של עסקים. המשימות בצד הלקוח כוללות: פיתוח דול HTML שהלקוח מקבל לאחר הגשת בקשה באתר פיתוח טופס העלאת מסמכים פיתוח חלונות מודאליים",
+          "link": "https://www.behance.net/gallery/154321453/CRM-system-for-GU-Loans"
+        },
+        "The Oleh Budget Calculator": {
+          "img": "calculator.png",
+          "description": "פיתוח יישום לחישוב וניתוח יוקר המחיה, כולל הוצאות תחבורה, עם תכונות ויזואליזציה דינמיות ואינטגרציה של נתונים בזמן אמת.",
+          "goal": "Creation of a cost of living calculator for moving to Israel, with integration of real prices and expense databases of various cities in the country.",
+          "fullDescription": "<yellowHeader>פירוט חישוב יוקר המחיה:</yellowHeader><paragraph>משתמשים יכולים להזין ולהתאים הוצאות שונות כגון דיור, שירותים ציבוריים, מזון, בידור, בריאות ועוד.</paragraph><paragraph>היישום מחשב את סך כל יוקר המחיה החודשי והשנתי בהתבסס על הנתונים שהוזנו.</paragraph><paragraph>נתמכת מסד נתונים של הוצאות ממוצעות לערים שונות בישראל לצורך חישובים מדויקים.</paragraph><whiteHeader>רכיב התחבורה:</whiteHeader><paragraph>סעיף נפרד להוצאות תחבורה, כולל אפשרויות לתחבורה ציבורית, הוצאות על רכב פרטי.</paragraph><paragraph>משתמשים יכולים להזין נתונים על נסיעות יומיות, סוג הרכב, צריכת הדלק והשימוש בתחבורה הציבורית.</paragraph><paragraph>אינטגרציה עם נתוני תנועה ומחירי דלק בזמן אמת לצורך חישוב הוצאות מדויק.</paragraph><whiteHeader>ויזואליזציה דינמית:</whiteHeader><paragraph>תרשימים וגרפים מפורטים להצגת מבנה ההוצאות בצורה ויזואלית.</paragraph><paragraph>תרשים אינטראקטיבי שמתעדכן בזמן אמת ככל שהמשתמשים משנים את הנתונים.</paragraph><paragraph>כלים להשוואה שמאפשרים לראות כיצד שינויים שונים משפיעים על התקציב הכולל.</paragraph><whiteHeader>שירות שערי מטבע:</whiteHeader><paragraph>שירות נפרד לקבלה ועדכון שערי מטבע בזמן אמת.</paragraph><paragraph>משתמשים יכולים להזין הוצאות במטבעות שונים, והיישום ממיר אותן אוטומטית לפי השער האחרון.</paragraph><paragraph>השירות מבטיח דיוק ועדכניות בחישובי העלות.</paragraph><whiteHeader>חישוב בזמן אמת:</whiteHeader><paragraph>ככל שהמשתמשים מזינים או משנים הוצאות, היישום מחשב מחדש את סך יוקר המחיה ומעדכן את התרשימים הוויזואליים באופן מיידי.</paragraph><paragraph>משוב מיידי עוזר למשתמשים להבין את ההשלכות הכלכליות של הבחירות שלהם ללא עיכובים.</paragraph>",
+          "link": ""
         }
       },
+      "goalText": "מטרה:",
+      "learnMore": "View the entire case",
       "orderLink": "הזמנת פרויקט"
     },
     "RoRAdvantages": {
