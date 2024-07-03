@@ -69,14 +69,14 @@ const AboutUs = () => {
       {/* CONNECT IN TELEGRAM */}
       <div className="flex flex-col lg:flex-row justify-between mt-[100px] md:mt-[60px] 2xl:mt-[100px] xl:pt-[50px] lg:h-[165px] xl:h-[230px] bg-no-repeat bg-contain relative overflow-hidden">
         <div className="text-lg leading-[23px] opacity-[12%] w-full absolute select-none hidden lg:block">
-          <p className="text-justify">{`!DOCTYPE html PUBLIC "-//WBC//DTD XHTML 1.0 Strict//EN""http://www.<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"‹meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">‹!--[if It IE 9]>script src="http://k!DOCTYPE html PUBLIC "-//WBC//DTD XHTML 1.0 Strict//EN" "http://www.<html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="content-type" content="text/html; charset=utf-8" ‹meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> ‹!--[if It IE 9]>script src="http://html5shim.googlecode.com/svn/thtml5shim.googlecode.com/svn/t ‹title>Harrix.org - Проектьк/title>‹meta name="keywords" content="" /› ‹title>Harrix.org - /title> WBC//DTD XHTML 1.0 Strict//EN"htmWBC//DTD`}</p>
+          <p className="text-justify">{`# app/controllers/articles_controller.rb class ArticlesController < ApplicationController def index @articles = Article.all end def show @article = Article.find(params[:id]) end def new @article = Article.new end def create @article = Article.new(article_params) if @article.save redirect_to @article else render :new end end # app/controllers/articles_controller.rb class ArticlesController < ApplicationController def index @articles = Article.all end def show @article = Article.find(params[:id]) end def new @article = Article.new end def create @article = Article.new(article_params) if @article.save redirect_to @article else render :new end end # app/controllers/articles_controller.rb class ArticlesController < ApplicationController def index @articles = Article.all end`}</p>
         </div>
         <div className="absolute w-full h-full flex justify-center md:justify-end lg:justify-center items-center lg:items-stretch lg:mt-[35px] xl:mt-[15px]">
           <div className="w-[220px] md:w-[210px] lg:w-[130px] 2xl:w-[190px] h-[180px] md:h-[170px] lg:h-[110px] 2xl:h-[160px] relative opacity-[59%] md:opacity-100 md:mr-[80px] lg:mr-0 mb-[145px] md:mb-0">
             <Image src={"/visibled-ruby.png"} fill alt="ruby" />
           </div>
         </div>
-        <div className="max-w-[445px] pt-[15px]">
+        <div className="max-w-[340px] xl:max-w-[445px] pt-[15px]">
           <h3
             className={`text-[36px] lg:text-[40px] 2xl:text-[48px] leading-[36px] lg:leading-[40px] 2xl:leading-[48px] tracking-[1px]  ${
               affectBold700.className
@@ -152,7 +152,7 @@ const AboutUs = () => {
               <a
                 href={link}
                 key={index}
-                target='_blank'
+                target="_blank"
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
@@ -173,7 +173,9 @@ const AboutUs = () => {
                       width={16}
                       height={16}
                       alt="arrow"
-                      className={`transition-all ${hoveredCard === index ? "opacity-100" : "opacity-0"}`}
+                      className={`transition-all ${
+                        hoveredCard === index ? "opacity-100" : "opacity-0"
+                      }`}
                     />
                   </div>
                 </Card>
