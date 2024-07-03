@@ -6,16 +6,9 @@ import { getMessages } from 'next-intl/server';
 import { Inter } from 'next/font/google';
 import { getLangDir } from 'rtl-detect';
 
-const inter = Inter({ subsets: ["latin"] });
+import getMetadata from '@/utils/generateMetadata';
 
-export const metadata: Metadata = {
-  title: "FUTURE MARKT - RoR",
-  description:
-    "FUTURE MARKT: Платформа для инновационных решений и передовых технологий, разработанных с использованием Ruby on Rails. Узнайте больше о новейших продуктах и услугах, которые делают вашу жизнь удобнее и технологичнее.",
-  keywords:
-    "инновации, технологии, Ruby on Rails, гаджеты, веб-разработка, IT-решения, обучение",
-  robots: "index, follow",
-};
+const inter = Inter({ subsets: ["latin"] });
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -36,9 +29,15 @@ export default async function RootLayout({
 }>) {
   const messages = await getMessages();
   const direction = getLangDir(locale);
+  const metadata = getMetadata(locale);
 
   return (
     <html lang={locale} dir={direction}>
+      <head>
+        <meta name="description" content={metadata.description as string} />
+        <meta name="keywords" content={metadata.keywords as string} />
+        <meta name="robots" content={metadata.robots as string} />
+      </head>
       <body className={`${inter.className} overflow-x-hidden`}>
         <NextIntlClientProvider messages={messages}>
           {children}
