@@ -150,7 +150,7 @@ const AboutUs = () => {
             // @ts-ignore
             ([title, { desc, link }], index) => (
               <a
-                href={link}
+                href={`${link}/${locale}`}
                 key={index}
                 target="_blank"
                 onMouseEnter={() => setHoveredCard(index)}
