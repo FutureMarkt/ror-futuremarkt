@@ -174,21 +174,28 @@ const OurHelp = () => {
                                   ),
                                   listLine: (chunks) => (
                                     <>
-                                      <li className="text-xs leading-[16.1px] pl-[0.5rem]">
+                                      <li className="text-xs leading-[16.1px] pl-[0.2rem]">
                                         {chunks}
                                       </li>
                                     </>
                                   ),
+                                  listTitle: (chunks) => (
+                                    <>
+                                      <p className="mt-3 text-xs leading-[16.1px]">
+                                        {chunks}
+                                      </p>
+                                    </>
+                                  ),
                                   list: (chunks) => (
                                     <>
-                                      <ol className="ml-[15px] mt-3 list-decimal">
+                                      <ol className={`list-decimal ${locale !== "he" ? "ml-[15px]" : "mr-[15px]"}`}>
                                         {chunks}
                                       </ol>
                                     </>
                                   ),
                                   listCircle: (chunks) => (
                                     <>
-                                      <ol className="ml-[15px] mt-3 list-disc">
+                                      <ol className={`list-disc ${locale !== "he" ? "ml-[15px]" : "mr-[15px]"}`}>
                                         {chunks}
                                       </ol>
                                     </>
