@@ -3,8 +3,8 @@
 import anime from 'animejs';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import {
     affect300, affect700, affectBold700, affectLight300, ppNeueMont500, ppNeueMontLight500
@@ -12,7 +12,6 @@ import {
 
 import DropdownMenu from '../DropdownMenu';
 import LocaleSwitcher from '../LocalSwitcher';
-import MenuProvider from '../MenuContext';
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -22,15 +21,18 @@ const Header = () => {
 
   const wordLines: HTMLDivElement[] = [];
 
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
   useEffect(() => {
     animateTrickingLine(wordLines, locale);
   });
 
   return (
     <>
-      <MenuProvider value={{ isOpen: menuIsOpen, setIsOpen: setMenuIsOpen }}>
-        <DropdownMenu />
-      </MenuProvider>
+      <DropdownMenu isOpen={menuIsOpen} setIsOpen={setMenuIsOpen} />
       <div className="relative overflow-hidden">
         {/* DESKTOP RUBY IMAGES */}
         <Image
@@ -76,11 +78,13 @@ const Header = () => {
             <div className="justify-between items-center mt-[20px] px-[20px] py-[10px] border rounded-[5px] hidden xl:flex">
               {/* HEADER LOGO */}
               <div className="max-w-[255px]">
-                <h1
+                <a
+                  href={`https://futuremarkt.com/${locale}`}
+                  target="_blank"
                   className={`text-[37.65px] leading-[48.72px] ${affect700.className}`}
                 >
                   FUTURE MARKT
-                </h1>
+                </a>
                 <p
                   className={`text-[16.73px] leading-[20.3px] tracking-[4px] uppercase ${affectLight300.className}`}
                 >
@@ -94,13 +98,9 @@ const Header = () => {
               >
                 {Object.entries(headerIntl.raw("navLinks")).map(
                   ([name, link]) => (
-                    <Link
-                      key={name}
-                      href={`${link}`}
-                      className="leading-[20px]"
-                    >
+                    <a key={name} href={`${link}`} className="leading-[20px]">
                       [{name}]
-                    </Link>
+                    </a>
                   )
                 )}
               </nav>
@@ -108,7 +108,7 @@ const Header = () => {
               {/* CONTACT AND SET LANG LINKS */}
               <div className="flex" dir="ltr">
                 <a
-                  href="https://t.me/yarkoch"
+                  href="https://t.me/vitkoz"
                   target="_blank"
                   className={`text-[#FFDE9F] flex items-center cursor-pointer xl:ml-0 xl:mr-[38.67px] 2xl:mx-[38.67px] uppercase transition-all hover:brightness-75 ${ppNeueMont500.className}`}
                 >
@@ -166,7 +166,7 @@ const Header = () => {
 
               {/* LINK IN TG */}
               <a
-                href="#"
+                href="https://t.me/vitkoz"
                 target="_blank"
                 className={`text-[#FFDE9F] text-xs md:text-lg flex items-center cursor-pointer uppercase transition-all hover:brightness-75 ${ppNeueMont500.className}`}
               >
@@ -184,7 +184,14 @@ const Header = () => {
 
             {/* HEADER TITLE */}
             <div
-              className={`flex flex-col items-center mt-[7.8vh] md:mt-[44px] lg:mt-[63px] 2xl:mt-[120px] text-[12px] md:text-sm lg:text-lg md:tracking-[1px] text-center ${ppNeueMont500.className}`}
+              className={`flex flex-col items-center mt-[7.8vh] md:mt-[44px] lg:mt-[63px] 2xl:mt-[120px] text-[12px] md:text-sm lg:text-lg md:tracking-[1px] text-center transition-all duration-500 ${
+                ppNeueMont500.className
+              } ${
+                inView
+                  ? "translate-y-[0px] opacity-100"
+                  : "translate-y-[100px] opacity-0"
+              }`}
+              ref={ref}
             >
               <p className={`md:leading-[17.6px] lg:leading-5`}>
                 {headerIntl.raw("projectImplement")}
@@ -270,7 +277,7 @@ const Header = () => {
                 </p>
                 {/* ORDER CONSULTATION BUTTON */}
                 <a
-                  href={"https://t.me/dmitrypodolskyfm"}
+                  href={"https://t.me/vitkoz"}
                   target="_blank"
                   className={`md:px-[26px] py-[15px] bg-[#FFDE9F] rounded-[5px] mt-4 md:mt-[36px] lg:mt-[48px] w-[330px] md:w-auto xl:mt-[48px] flex justify-center text-xs md:text-lg z-10 transition-all hover:brightness-75 ${ppNeueMont500.className}`}
                   dir="ltr"
