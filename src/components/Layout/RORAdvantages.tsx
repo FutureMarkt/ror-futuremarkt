@@ -11,10 +11,17 @@ const RORAdvantages = () => {
   const ourApproachIntl = useTranslations("Index.OurApproach");
 
   const id = "advantages-ror";
-  const header = rorIntl.raw("title");
+  const header = rorIntl.rich("title", {
+    break: (chunks) => (
+      <>
+        {chunks}
+        <br></br>
+      </>
+    ),
+  });
 
   return (
-    <div className="relative">
+    <div className="relative -z-10">
       <div className="absolute left-0 top-[408px] w-[139px] h-[236px] hidden md:block lg:hidden">
         <Image src={"/_ror/half-ruby.png"} fill alt="half-ruby" />
       </div>
@@ -26,14 +33,15 @@ const RORAdvantages = () => {
       <Section id={id} header={header} theme="light">
         {/* RoR advantages */}
         <div className="flex items-center justify-between relative mt-[30px] md:mt-0">
-          <div className="hidden md:block lg:w-[412px] xl:w-[640px] lg:h-[529px] xl:h-[483px]">
+          <div className="hidden md:block lg:w-[412px] xl:w-[640px] lg:h-[529px] xl:h-[483px] relative">
             <Image
-              src="/_ror/ruby-lg.png"
-              width={412}
-              height={529}
+              src="/_ror/ruby-xl.png"
+              fill
               placeholder="empty"
               alt="ruby"
-              className="md:hidden lg:block 2xl:hidden"
+              className={`md:hidden lg:block 2xl:hidden object-contain ${
+                locale === "he" ? "rotate-y-180" : ""
+              }`}
             />
             <Image
               src={`/_ror/ruby-xl${locale === "he" ? "-he" : ""}.png`}
@@ -44,7 +52,7 @@ const RORAdvantages = () => {
               className="hidden 2xl:block"
             />
           </div>
-          <div className="md:pl-[45px] lg:pl-0 max-w-[640px]">
+          <div className="md:pl-[45px] lg:pl-0 max-w-[522px] xl:max-w-[640px]">
             {Object.entries(rorIntl.raw("advantages")).map(
               ([advt, desc], index) => (
                 <div
@@ -75,7 +83,14 @@ const RORAdvantages = () => {
           <h1
             className={`uppercase tracking-[5px] leading-[40px] md:leading-[64px] text-[40px] md:text-2xl text-center ${affectBold700.className}`}
           >
-            {ourApproachIntl.raw("title")}
+            {ourApproachIntl.rich("title", {
+              break: (chunks) => (
+                <>
+                  {chunks}
+                  <br />
+                </>
+              ),
+            })}
           </h1>
 
           <div className="mt-[60px] flex flex-col gap-[30px] md:block">
@@ -85,7 +100,7 @@ const RORAdvantages = () => {
                   key={index}
                   className={`flex gap-3 md:gap-0 justify-between text-xl tracking-[1px] pb-3 md:py-[30px] border-b border-[#BDBDBD] leading-6 ${affectBold700.className}`}
                 >
-                  <p className='w-auto md:w-[40px]'>0{index + 1}</p>
+                  <p className="w-auto md:w-[40px]">0{index + 1}</p>
                   <div
                     className={`w-[87%] flex flex-col md:flex-row justify-between ${
                       locale === "he"
