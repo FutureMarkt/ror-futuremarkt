@@ -5,9 +5,11 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
+import { useClickOutside } from 'react-click-outside-hook';
+import { useInView } from 'react-intersection-observer';
 
-import { affect700, affectBold700, ppNeueMontLight500 } from '@/utils/fonts';
+import { affectBold700, ppNeueMontLight500 } from '@/utils/fonts';
 
 import CasesSlider from '../CasesSlider';
 import Section from '../Section';
@@ -25,9 +27,24 @@ const OurCases = () => {
   const ourCasesIntl = useTranslations("Index.OurCases");
 
   const [hoveredCase, setHoveredCase] = useState<number | null>(null);
+  const [modalContent, setModalContent] = useState<ReactNode | null>(null);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const [outsideRef, hasClickedOutside] = useClickOutside();
 
   const id = "our-cases";
   const header = ourCasesIntl.raw("title");
+
+  useEffect(() => {
+    if (!hasClickedOutside) {
+      setModalContent(null);
+      setHoveredCase(null);
+    }
+  }, [hasClickedOutside]);
 
   const customHeader: JSX.Element = (
     <div className={`text-center`}>
@@ -57,98 +74,78 @@ const OurCases = () => {
   );
 
   return (
-    <Section
-      id={id}
-      header={header}
-      customHeader={customHeader}
-      customContainerStyles=""
-    >
-      {/* CASES LIST */}
-      <div className="mt-[60px] flex gap-5 justify-between">
-        {/* SLIDER FOR MOBILE DEVICES */}
-        <div className="block 2xl:hidden w-[330px] md:w-[708px] lg:w-[964px]">
-          <CasesSlider />
-        </div>
+    <div>
+      <div
+        className={`fixed w-[100vw] h-full left-0 top-0 z-[-1] transition-all ${
+          modalContent ? "z-[0]" : "z-20 opacity-0"
+        }`}
+      >
+        <div className="bg-black opacity-70 fixed w-full left-0 top-0 h-full z-10"></div>
 
-        {/* DESKTOP VERSION OF CASES */}
-        <div className="hidden 2xl:flex gap-5">
-          {Object.entries(ourCasesIntl.raw("cases") as Cases).map(
-            ([title, { description, img }], index) => (
-              <div
-                key={index}
-                className={`max-w-[420px] transition-all ${
-                  hoveredCase === index ? "brightness-100" : "brightness-75"
-                }`}
-                onMouseEnter={() => setHoveredCase(index)}
-                onMouseLeave={() => setHoveredCase(null)}
-              >
-                <div className="w-[420px] h-[370px] relative">
-                  <Image
-                    src={`/_our-cases/${img}`}
-                    alt={img.split(".")[0]}
-                    fill
-                    className="bg-[#1D1D1D] rounded-[5px] object-contain"
-                  />
-                </div>
-
-                {/* CASE TITLE */}
-                <h4
-                  className={`mt-3 flex justify-between items-baseline text-xl uppercase leading-6 tracking-[1px] cursor-pointer ${affect700.className}`}
-                >
-                  <span className="2xl:mr-4">{title}</span>
-                  <Image
-                    src="/_our-cases/arrow-side-light.png"
-                    width={16}
-                    height={16}
-                    alt="arrow"
-                    className={`mb-[2px] ${
-                      hoveredCase === index ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                </h4>
-
-                {/* CASE DESCRIPTION */}
-                <p
-                  className={`mt-3 max-w-[412px] 2xl:w-auto text-xs leading-[16.1px] text-[#F7F7F7] ${ppNeueMontLight500.className}`}
-                >
-                  {description}
-                </p>
-              </div>
-            )
-          )}
+        <div className="fixed z-20 w-full h-full flex justify-center items-center">
+          <div
+            className="w-4 h-4 absolute right-10 top-10 cursor-pointer"
+            onClick={() => {
+              setModalContent(null);
+              document.body.style.overflow = "auto";
+            }}
+          >
+            <Image src={"/close.png"} width={16} height={16} alt="close" />
+          </div>
+          <div className="w-[340px] sm:w-[600px] md:w-[700px] h-[500px] md:h-[600px] bg-[#1D1D1D] rounded-[5px] p-6 overflow-auto">
+            {modalContent}
+          </div>
         </div>
       </div>
 
-      {/* ORDER A PROJECT */}
-      <div className="flex justify-center">
-        <a
-          href="https://t.me/yarkoch"
-          target="_blank"
-          className=" flex items-center mt-[56px] md:mt-[62px] lg:mt-[60px] text-lg leading-5 text-[#FFDE9F] transition-all hover:brightness-75 uppercase"
-        >
-          [{ourCasesIntl.raw("orderLink")}
-          {locale !== "he" && (
-            <Image
-              src="/arrow-side-yellow.png"
-              width={16}
-              height={16}
-              alt="arrow"
-              className="mr-1"
+      <Section
+        id={id}
+        header={header}
+        customHeader={customHeader}
+        customSectionStyles={`relative ${modalContent ? "z-[-1]" : "z-0"}`}
+      >
+        {/* CASES LIST */}
+        <div className="mt-[60px] flex gap-5 justify-between">
+          {/* SLIDER FOR MOBILE DEVICES */}
+          <div className="block w-[330px] 2xl:w-[1300px] md:w-[708px] lg:w-[964px]">
+            <CasesSlider
+              modalContent={modalContent}
+              setModalContent={setModalContent}
             />
-          )}
-          ]
-          {locale === "he" && (
-            <Image
-              src="/arrow-side-yellow.png"
-              width={16}
-              height={16}
-              alt="arrow"
-              className="mx-1"
-            />
-          )}
-        </a>
-      </div>
-    </Section>
+          </div>
+        </div>
+
+        {/* ORDER A PROJECT */}
+        <div className="flex justify-center">
+          <a
+            href="https://t.me/vitkoz"
+            target="_blank"
+            className=" flex items-center mt-[56px] md:mt-[62px] lg:mt-[60px] text-lg leading-5 text-[#FFDE9F] transition-all hover:brightness-75 uppercase"
+          >
+            [{ourCasesIntl.raw("orderLink")}
+            {locale !== "he" && (
+              <Image
+                src="/arrow-side-yellow.png"
+                width={16}
+                height={16}
+                alt="arrow"
+                className="mr-1"
+              />
+            )}
+            ]
+            {locale === "he" && (
+              <Image
+                src="/arrow-side-yellow.png"
+                width={16}
+                height={16}
+                alt="arrow"
+                className="mx-1"
+              />
+            )}
+          </a>
+        </div>
+      </Section>
+    </div>
   );
 };
 
