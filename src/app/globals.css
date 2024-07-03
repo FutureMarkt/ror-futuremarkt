@@ -6,32 +6,40 @@
   scroll-behavior: smooth;
 }
 
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
 @media screen and (min-width: 1024px) {
-  body::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     width: 8px;
     height: 6px;
   }
-  body::-webkit-scrollbar-track {
+  *::-webkit-scrollbar-track {
     width: 8px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.1);
   }
-  body::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.3);
   }
-  body::-webkit-scrollbar-thumb:hover {
+  *::-webkit-scrollbar-thumb:hover {
     background: rgba(0, 0, 0, 0.4);
   }
-  body::-webkit-scrollbar-thumb:active {
+  *::-webkit-scrollbar-thumb:active {
     background: rgba(0, 0, 0, 0.5);
   }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .swiper-scrollbar {
     display: none;
   }
+} */
+
+.swiper {
+  height: 520px;
 }
 
 @media screen and (max-width: 767px) {
