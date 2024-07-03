@@ -49,7 +49,7 @@ const OurCases = () => {
   const customHeader: JSX.Element = (
     <div className={`text-center`}>
       <h1
-        className={`uppercase text-[40px] md:text-2xl ${affectBold700.className}`}
+        className={`uppercase leading-[40px] md:leading-[64px] text-[40px] md:text-2xl ${affectBold700.className}`}
       >
         {header}
       </h1>

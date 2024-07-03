@@ -10,7 +10,7 @@
         "About Us": "#about-us"
       },
       "messageUs": "Message on Telegram",
-      "projectImplement": "Project implementation in 1 month!",
+      "projectImplement": "Project implementation in 1 month",
       "title": "Fast development of your<break></break> idea on Ruby on Rails",
       "adaptiveTitle": "Fast<break></break> development<break></break> of your idea<break></break>  on Ruby on Rails",
       "mdTitle": "Fast development<break></break> of your idea on Ruby<break></break>on Rails",
@@ -60,7 +60,7 @@
           }
         },
         "OUTSTAFFING": {
-          "SENIOR ROR DEVELOPER (ROR, PostgreSQL, MySQL, Vue.js)": {
+          "SENIOR ROR DEVELOPER (ROR, PostgreSQL, MySQL, Vue|js)": {
             "description": "Leads projects, designs architecture; Makes key technical decisions; Provides mentorship, explores new technologies",
             "price": "75 per hour",
             "fullDescription": "<mainTitle>Senior Developer</mainTitle><paragraph>Experienced developer with deep knowledge and many years of experience with Ruby on Rails.</paragraph><listTitle>Responsibilities:</listTitle><listCircle><listLine>Developing and optimizing complex functional modules and components: Creating key functional parts of the application, improving existing code to enhance performance.</listLine><listLine>Solving architectural tasks and choosing technologies for the project: Defining the structure and technology of the project to ensure its scalability and flexibility.</listLine><listLine>Mentoring and training junior developers: Training and supporting less experienced team members, helping them grow.</listLine><listLine>Code review and ensuring high code quality: Reviewing and analyzing code written by other developers to ensure its quality and compliance with standards.</listLine></listCircle>"

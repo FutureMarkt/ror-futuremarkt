@@ -197,7 +197,7 @@ const Header = () => {
                 {headerIntl.raw("projectImplement")}
               </p>
               <div
-                className={`uppercase text-[37px] md:text-[63px] 2xl:text-3xl text-center leading-[37px] md:leading-[63px] 2xl:leading-[85px] md:max-w-[706px] lg:max-w-[1300px] mt-3 ${affectBold700.className}`}
+                className={`uppercase text-[37px] md:text-[63px] 2xl:text-3xl text-center leading-[37px] md:leading-[63px] 2xl:leading-[85px] md:max-w-[706px] lg:max-w-[1300px] ${affectBold700.className}`}
               >
                 <h1 className="hidden lg:block">
                   {headerIntl.rich("title", {
@@ -234,7 +234,7 @@ const Header = () => {
               </div>
 
               {/* MOBILE RUBY IMAGE */}
-              <div className="flex justify-center w-[145px] h-[120px] mt-6 relative md:hidden">
+              <div className="flex justify-center w-[145px] h-[120px] mt-12 relative md:hidden">
                 <Image src={"/ruby.png"} fill alt="ruby" />
               </div>
 

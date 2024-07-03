@@ -38,7 +38,7 @@ const Footer = () => {
               {footerIntl.raw("legalEntityInfo")}
             </p>
             <a
-              href="https://futuremarkt.com/privacy"
+              href={`https://futuremarkt.com/${locale}/privacy/`}
               target="_blank"
               className="leading-3 text-[12px] md:text-xs mt-[10px] md:mt-3 text-[#7F7F7F]"
             >
@@ -88,6 +88,7 @@ const Footer = () => {
               width={12}
               height={12}
               alt="arrow up"
+              className='mx-1'
             />
             {footerIntl.raw("upBtn")}
           </Link>

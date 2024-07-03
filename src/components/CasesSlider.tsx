@@ -132,6 +132,7 @@ const CasesSlider = ({ modalContent, setModalContent }: CasesSliderProps) => {
                     width={16}
                     height={16}
                     alt="arrow"
+                    className='ml-[6px]'
                   />
                   ]
                 </p>
@@ -159,7 +160,7 @@ const CasesSlider = ({ modalContent, setModalContent }: CasesSliderProps) => {
             width={16}
             height={16}
             alt="arrow"
-            className={`transition-all duration-300 ${
+            className={`transition-all duration-300 hidden lg:block ${
               hoveredCase === index
                 ? "opacity-0 xl:opacity-100"
                 : "xl:opacity-0"

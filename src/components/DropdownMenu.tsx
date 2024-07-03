@@ -70,23 +70,24 @@ const DropdownMenu = ({
         </div>
 
         <div
-          className={`mt-[210px] md:mt-[65px] flex flex-col items-center gap-[30px] md:gap-[50px] text-sm md:text-[48px] leading-[24px] md:leading-[48px] ${ppNeueMont500.className}`}
+          className={`flex flex-col mt-[210px] md:mt-[100px] items-center text-sm md:text-[48px] leading-[24px] md:leading-[48px] h-full ${ppNeueMont500.className}`}
         >
-          {Object.entries(headerIntl.raw("navLinks")).map(([name, link]) => (
-            <Link
-              key={name}
-              href={`${link}`}
-              onClick={() => {
-                setIsOpen(false);
-                document.body.style["overflowY"] = "scroll";
-              }}
-            >
-              [{name}]
-            </Link>
-          ))}
+          <div className="flex flex-col items-center gap-[30px] md:gap-[50px]">
+            {Object.entries(headerIntl.raw("navLinks")).map(([name, link]) => (
+              <Link
+                key={name}
+                href={`${link}`}
+                onClick={() => {
+                  setIsOpen(false);
+                  document.body.style["overflowY"] = "scroll";
+                }}
+              >
+                [{name}]
+              </Link>
+            ))}
+          </div>
+          <LocaleSwitcher />
         </div>
-
-        <LocaleSwitcher />
       </div>
     </div>
   );

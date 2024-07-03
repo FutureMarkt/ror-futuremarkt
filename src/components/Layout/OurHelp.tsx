@@ -23,7 +23,14 @@ const OurHelp = () => {
 
   const ourHelpIntl = useTranslations("Index.OurHelp");
   const header = ourHelpIntl.raw("title");
-  const responsiveHeader = ourHelpIntl.raw("adaptiveTitle");
+  const responsiveHeader = ourHelpIntl.rich("adaptiveTitle", {
+    breakMd: (chunks) => (
+      <>
+        {chunks}
+        <br></br>
+      </>
+    ),
+  });
 
   const popupRef = useRef<HTMLDivElement | null>(null);
 
@@ -37,12 +44,12 @@ const OurHelp = () => {
 
   useClickAway(popupRef, (evt: MouseEvent) => {
     if (serviceDescription) {
-      evt.preventDefault();
-      evt.stopPropagation();
       setTimeout(() => {
+        evt.preventDefault();
+        evt.stopPropagation();
         setServiceDescription("");
         document.body.style.overflow = "auto";
-      }, 50);
+      }, 150);
     }
   });
 
@@ -71,35 +78,36 @@ const OurHelp = () => {
             ref={popupRef}
           >
             <div className="flex flex-col justify-between h-full">
-              <div className="text-[#FFFFFF]">{serviceDescription}</div>
-
-              <a
-                href="https://t.me/vitkoz"
-                target="_blank"
-                className={`text-[#FFDE9F] flex items-center cursor-pointer uppercase transition-all hover:brightness-75 ${ppNeueMont500.className}`}
-                dir="ltr"
-              >
-                {locale === "he" && (
-                  <Image
-                    src={"/arrow-side-yellow.png"}
-                    width={16}
-                    height={16}
-                    alt="arrow"
-                    className="mr-[2px]"
-                  />
-                )}
-                [{ourHelpIntl.raw("messageUs")}
-                {locale !== "he" && (
-                  <Image
-                    src={"/arrow-side-yellow.png"}
-                    width={16}
-                    height={16}
-                    alt="arrow"
-                    className="ml-[2px]"
-                  />
-                )}
-                ]
-              </a>
+              <div className="text-[#FFFFFF]">
+                {serviceDescription}
+                <a
+                  href="https://t.me/vitkoz"
+                  target="_blank"
+                  className={`text-[#FFDE9F] flex items-center cursor-pointer uppercase transition-all hover:brightness-75 mt-[15px] ${ppNeueMont500.className}`}
+                  dir="ltr"
+                >
+                  {locale === "he" && (
+                    <Image
+                      src={"/arrow-side-yellow.png"}
+                      width={16}
+                      height={16}
+                      alt="arrow"
+                      className="mr-[2px]"
+                    />
+                  )}
+                  [{ourHelpIntl.raw("messageUs")}
+                  {locale !== "he" && (
+                    <Image
+                      src={"/arrow-side-yellow.png"}
+                      width={16}
+                      height={16}
+                      alt="arrow"
+                      className="ml-[2px]"
+                    />
+                  )}
+                  ]
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -110,6 +118,12 @@ const OurHelp = () => {
         adaptiveTitle={responsiveHeader}
         lgTitle={ourHelpIntl.rich("lgTitle", {
           break: (chunks) => (
+            <>
+              {chunks}
+              <br></br>
+            </>
+          ),
+          breakMd: (chunks) => (
             <>
               {chunks}
               <br></br>
@@ -149,7 +163,7 @@ const OurHelp = () => {
                       return (
                         <div
                           key={cardTitle}
-                          className={`md:w-full lg:max-w-[301px] 2xl:max-w-[420px] md:h-[260px] xl:h-[250px] 2xl:h-[232px] border border-[#030303] rounded-[5px] px-[17px] py-[20px] flex flex-col justify-start transition-all hover:bg-[#FFDE9F] cursor-pointer ${
+                          className={`md:w-full lg:max-w-[301px] 2xl:max-w-[420px] h-[245px] md:h-[276px] xl:h-[260px] 2xl:h-[240px] border border-[#030303] rounded-[5px] px-[17px] py-[20px] flex flex-col justify-start transition-all hover:bg-[#FFDE9F] cursor-pointer ${
                             isList ? "h-[232px]" : "h-[208px]"
                           }`}
                           onMouseEnter={() => setHoveredCard(index)}
@@ -188,14 +202,26 @@ const OurHelp = () => {
                                   ),
                                   list: (chunks) => (
                                     <>
-                                      <ol className={`list-decimal ${locale !== "he" ? "ml-[15px]" : "mr-[15px]"}`}>
+                                      <ol
+                                        className={`list-decimal ${
+                                          locale !== "he"
+                                            ? "ml-[15px]"
+                                            : "mr-[15px]"
+                                        }`}
+                                      >
                                         {chunks}
                                       </ol>
                                     </>
                                   ),
                                   listCircle: (chunks) => (
                                     <>
-                                      <ol className={`list-disc ${locale !== "he" ? "ml-[15px]" : "mr-[15px]"}`}>
+                                      <ol
+                                        className={`list-disc ${
+                                          locale !== "he"
+                                            ? "ml-[15px]"
+                                            : "mr-[15px]"
+                                        }`}
+                                      >
                                         {chunks}
                                       </ol>
                                     </>

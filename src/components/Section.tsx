@@ -37,7 +37,7 @@ const Section = ({
 }: SectionProps) => {
   const { ref, inView } = useInView({
     // triggerOnce: true,
-    threshold: [threshold, 0.8],
+    threshold: [threshold, 0],
   });
 
   return (

@@ -1,14 +1,18 @@
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { useClickAway } from 'react-use';
 
 import { affect700 } from '@/utils/fonts';
 
 const LocaleSwitcher = () => {
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
+  const localeSwitcherRef = useRef(null);
 
   const locale = useLocale();
+
+  useClickAway(localeSwitcherRef, () => setIsOpenDropdown(false))
 
   return (
     <div className="flex flex-col items-center justify-center mt-[60px] md:mt-[50px] xl:mt-0 relative">
@@ -32,6 +36,7 @@ const LocaleSwitcher = () => {
         className={`flex-col items-center transition-all mt-2 xl:mt-0 ${
           isOpenDropdown ? "flex" : "hidden"
         }`}
+        ref={localeSwitcherRef}
       >
         <div className="absolute z-10 rounded-[5px] bg-[#030303] w-[64px] xl:w-[48px] p-2 pb-4 xl:p-1 border flex flex-col gap-2 xl:gap-0">
           {locales.map((localeItem) => (

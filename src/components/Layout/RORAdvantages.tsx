@@ -33,8 +33,12 @@ const RORAdvantages = () => {
       <Section id={id} header={header} theme="light">
         {/* RoR advantages */}
         <div className="flex items-center justify-between relative mt-[30px] md:mt-0">
-          <div className="hidden md:block lg:w-[412px] xl:w-[640px] lg:h-[529px] xl:h-[483px] relative">
-            <Image
+          <div className="hidden md:flex justify-center items-center lg:w-[412px] xl:w-[616px] h-[529px] xl:h-[610px] 2xl:h-[450px] relative">
+            <Image src={"/_ror/ruby-text.png"} fill alt="ruby-code" />
+            <div className="relative lg:w-[383px] xl:w-[478px] lg:h-[325px] xl:h-[405px]">
+              <Image src={"/_ror/ruby.png"} fill alt="ruby-code" className="" />
+            </div>
+            {/* <Image
               src="/_ror/ruby-xl.png"
               fill
               placeholder="empty"
@@ -50,9 +54,9 @@ const RORAdvantages = () => {
               placeholder="empty"
               alt="ruby"
               className="hidden 2xl:block"
-            />
+            /> */}
           </div>
-          <div className="md:pl-[45px] lg:pl-0 max-w-[522px] xl:max-w-[640px]">
+          <div className="md:pl-[45px] lg:pl-0 max-w-[522px] 2xl:max-w-[640px] ml-[44px]">
             {Object.entries(rorIntl.raw("advantages")).map(
               ([advt, desc], index) => (
                 <div

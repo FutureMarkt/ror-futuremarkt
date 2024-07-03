@@ -35,7 +35,7 @@ const AboutUs = () => {
           {aboutUsIntl.rich("responsiveDescription", {
             span: (chunks) => (
               <>
-                <span className="text-[#4C4C4C]" id="scroll-text">
+                <span className="text-[#F7F7F7]" id="scroll-text">
                   {chunks}
                 </span>
               </>
@@ -69,16 +69,16 @@ const AboutUs = () => {
       {/* CONNECT IN TELEGRAM */}
       <div className="flex flex-col lg:flex-row justify-between mt-[100px] md:mt-[60px] 2xl:mt-[100px] xl:pt-[50px] lg:h-[165px] xl:h-[230px] bg-no-repeat bg-contain relative overflow-hidden">
         <div className="text-lg leading-[23px] opacity-[12%] w-full absolute select-none hidden lg:block">
-          <p className="text-justify">{`# app/controllers/articles_controller.rb class ArticlesController < ApplicationController def index @articles = Article.all end def show @article = Article.find(params[:id]) end def new @article = Article.new end def create @article = Article.new(article_params) if @article.save redirect_to @article else render :new end end # app/controllers/articles_controller.rb class ArticlesController < ApplicationController def index @articles = Article.all end def show @article = Article.find(params[:id]) end def new @article = Article.new end def create @article = Article.new(article_params) if @article.save redirect_to @article else render :new end end # app/controllers/articles_controller.rb class ArticlesController < ApplicationController def index @articles = Article.all end`}</p>
+          <p className="text-justify mt-[47px] xl:mt-0">{`# app/controllers/articles_controller.rb class ArticlesController < ApplicationController def index @articles = Article.all end def show @article = Article.find(params[:id]) end def new @article = Article.new end def create @article = Article.new(article_params) if @article.save redirect_to @article else render :new end end # app/controllers/articles_controller.rb class ArticlesController < ApplicationController def index @articles = Article.all end def show @article = Article.find(params[:id]) end def new @article = Article.new end def create @article = Article.new(article_params) if @article.save redirect_to @article else render :new end end # app/controllers/articles_controller.rb class ArticlesController < ApplicationController def index @articles = Article.all end`}</p>
         </div>
         <div className="absolute w-full h-full flex justify-center md:justify-end lg:justify-center items-center lg:items-stretch lg:mt-[35px] xl:mt-[15px]">
           <div className="w-[220px] md:w-[210px] lg:w-[130px] 2xl:w-[190px] h-[180px] md:h-[170px] lg:h-[110px] 2xl:h-[160px] relative opacity-[59%] md:opacity-100 md:mr-[80px] lg:mr-0 mb-[145px] md:mb-0">
             <Image src={"/visibled-ruby.png"} fill alt="ruby" />
           </div>
         </div>
-        <div className="max-w-[340px] xl:max-w-[445px] pt-[15px]">
+        <div className="max-w-[360px] xl:max-w-[445px] pt-[15px]">
           <h3
-            className={`text-[36px] lg:text-[40px] 2xl:text-[48px] leading-[36px] lg:leading-[40px] 2xl:leading-[48px] tracking-[1px]  ${
+            className={`text-[36px] lg:text-[40px] 2xl:text-[48px] leading-[36px] lg:leading-[40px] 2xl:leading-[48px] tracking-[1px] uppercase ${
               affectBold700.className
             } ${locale === "he" ? "text-right" : "md:text-left text-center"}`}
           >
@@ -107,7 +107,7 @@ const AboutUs = () => {
                 key={worker}
                 href={link}
                 target="_blank"
-                className="flex items-center text-[#FFDE9F] mt-[17px] lg:mt-[15px] xl:mt-[17px] relative uppercase transition-all hover:brightness-75"
+                className="flex items-center text-[#FFDE9F] mt-[8px] lg:mt-[10px] xl:mt-[10px] relative uppercase transition-all hover:brightness-75"
               >
                 [
                 {locale === "he" && (
