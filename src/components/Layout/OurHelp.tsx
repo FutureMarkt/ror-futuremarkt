@@ -78,12 +78,12 @@ const OurHelp = () => {
             ref={popupRef}
           >
             <div className="flex flex-col justify-between h-full">
-              <div className="text-[#FFFFFF]">
-                {serviceDescription}
+              <div className="text-[#FFFFFF] h-full flex flex-col justify-between">
+                <div className='mb-[15px]'>{serviceDescription}</div>
                 <a
                   href="https://t.me/vitkoz"
                   target="_blank"
-                  className={`text-[#FFDE9F] flex items-center cursor-pointer uppercase transition-all hover:brightness-75 mt-[15px] ${ppNeueMont500.className}`}
+                  className={`text-[#FFDE9F] flex items-center cursor-pointer uppercase transition-all hover:brightness-75 pb-[20px] sm:pb-0 ${ppNeueMont500.className}`}
                   dir="ltr"
                 >
                   {locale === "he" && (

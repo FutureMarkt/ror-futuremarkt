@@ -213,7 +213,7 @@ const getShownSlides = () => {
       return 2.25;
     }
 
-    if (window.innerWidth <= 1024) {
+    if (window.innerWidth < 1024) {
       return 1.09;
     } else {
       return 2.25;
