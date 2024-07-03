@@ -25,65 +25,80 @@
       "title": "How we can assist you",
       "adaptiveTitle": "Services",
       "lgTitle": "How we can <break></break>assist you",
+      "messageUs": "Message on Telegram",
       "filters": {
         "Project Activities": {
           "Web Project Development": {
             "description": "Creating high-quality and scalable web applications using the powerful and flexible framework — Ruby on Rails",
-            "price": "10 000"
+            "price": "10 000",
+            "fullDescription": "<mainTitle>Web Project Development</mainTitle><paragraph>We will create a web project using Ruby on Rails.</paragraph><paragraph>What are the advantages of this development?</paragraph><list><listLine>Development speed: Ruby on Rails offers developers the ability to quickly develop and deploy web applications.</listLine><listLine>Code quality: Rails encourages the use of best programming practices, such as the MVC (Model-View-Controller) architecture, which makes the code more organized and maintainable.</listLine><listLine>Flexibility and scalability: Rails allows you to easily modify and scale web applications as the business grows.</listLine><listLine>Security: Ruby on Rails includes many built-in security mechanisms that help protect web applications from common vulnerabilities such as SQL injections, XSS, and CSRF. This is especially important for web projects dealing with sensitive data.</listLine><listLine>Cost savings: Due to the high development speed and code quality, Ruby on Rails projects often require a smaller budget for development and maintenance compared to other technologies. This allows businesses to save resources and allocate them to other important tasks.</listLine></list>"
           },
           "Business Application Development": {
             "description": "Applications for optimizing business processes and increasing company efficiency",
-            "price": "50 000"
+            "price": "50 000",
+            "fullDescription": "<mainTitle>Business Application Development</mainTitle><paragraph>Business applications are software solutions specifically designed to automate, optimize, and manage business processes within a company.</paragraph><paragraph>Why is this necessary?</paragraph><list><listLine>Process automation: Business applications allow for the automation of routine and repetitive tasks, freeing up employees to perform more complex tasks.</listLine><listLine>Increased efficiency: Using specialized business applications helps improve coordination between different departments of the company, simplifies information exchange, and speeds up decision-making.</listLine><listLine>Data accuracy and reliability: Business applications allow for the collection, storage, and analysis of large volumes of data with a high degree of accuracy. This minimizes the likelihood of errors and enables informed decision-making based on accurate data.</listLine><listLine>Improved customer service: Business applications, such as CRM systems, help better manage customer relationships, track their needs and preferences, and provide more personalized service.</listLine><listLine>Scalability and flexibility: Modern business applications are easily scalable and adaptable to the changing needs of the company. This allows the company to grow and develop without significant changes in the technologies used.</listLine><listLine>Security and confidentiality: Business applications include modern data protection mechanisms, which are especially important for companies working with confidential information. This helps protect the business from cyber threats and comply with data protection regulations.</listLine></list>"
           },
           "Code Audit": {
             "description": "Analysis and evaluation of your current project for: code quality, security, scalability, and performance",
-            "price": "700"
+            "price": "700",
+            "fullDescription": "<mainTitle>Code Audit</mainTitle><paragraph>Code audit is a thorough analysis of the source code of your software to identify errors, vulnerabilities, inefficient areas, and non-compliance with best development practices.</paragraph><paragraph>Why is this necessary?</paragraph><list><listLine>Ensuring code quality: Audit helps detect and fix errors and bugs in the code, improving the overall quality of the software and reducing the likelihood of future failures and errors.</listLine><listLine>Improving performance: Audit identifies inefficient areas of the code that may slow down the application. Optimizing these areas improves the performance and speed of the software.</listLine><listLine>Compliance with standards and best practices: Code audit checks the code for compliance with established standards and best development practices. This ensures ease of maintenance and further development of the project.</listLine><listLine>Reducing technical debt: Regular code audits help reduce technical debt that can accumulate in a project due to the use of outdated solutions or temporary \"patches\".</listLine><listLine>Documenting and understanding the code: Audit helps better understand the structure and logic of the code, making it easier to document and transfer to other developers. This is especially important for large projects and teamwork.</listLine></list>"
           },
           "Integration with External Systems": {
             "description": "Creating compatible and interconnected applications that interact with various external services and APIs",
-            "price": "10 000"
+            "price": "10 000",
+            "fullDescription": "<mainTitle>Integration with External Systems</mainTitle><paragraph>Integration with external systems involves the process of combining your software with other applications, services, or platforms. This allows you to automate business processes, improve data exchange, and expand the functionality of your software by interacting with external systems.</paragraph><paragraph>Why is this necessary?</paragraph><list><listLine>Automation of business processes: Integration allows you to automate many tasks such as order management, payment processing, customer management, and more.</listLine><listLine>Data synchronization: Integration ensures real-time data synchronization between various systems, which helps avoid data duplication and entry errors.</listLine><listLine>Functionality expansion: Integration with external systems allows you to add new features and capabilities to your software. For example, integration with payment systems, CRM, ERP, marketing platforms, and other services can significantly expand your product's functionality.</listLine><listLine>Improved customer experience: Integration enables you to provide customers with more convenient and personalized services.</listLine><listLine>Time and resource savings: Integration reduces the time required to perform routine operations and decreases the costs of manual labor. This frees up resources for more important tasks and supports business growth.</listLine></list>"
           },
           "E-commerce Systems Development": {
             "description": "Creating flexible solutions capable of handling and processing large volumes of transactions",
-            "price": "100 000"
+            "price": "100 000",
+            "fullDescription": "<mainTitle>E-commerce System Development</mainTitle><paragraph>An e-commerce system is software that enables companies to sell their products and services over the internet.</paragraph><paragraph>Why is this necessary?</paragraph><list><listLine>Access to a wide audience: Online stores allow companies to enter the global market and attract customers from all over the world. This significantly expands the potential customer base and increases sales.</listLine><listLine>Convenience for customers: Modern e-commerce systems offer user-friendly interfaces and features that make the purchasing process quick and easy for customers.</listLine><listLine>Business process automation: E-commerce systems automate many routine tasks, such as order processing, inventory management, delivery tracking, and customer management.</listLine><listLine>Analytics and reporting: E-commerce systems provide tools for analyzing sales data, customer behavior, and the effectiveness of marketing campaigns. This helps make informed decisions and improve business strategies.</listLine><listLine>Transaction security: Modern e-commerce platforms provide a high level of security to protect customer data and transactions. This increases customer trust and reduces the risk of fraud.</listLine></list>"
           },
           "Upgrading and Evolving Existing Applications": {
             "description": "From making adjustments to existing code to creating a new module from scratch",
-            "price": "45 per hour"
+            "price": "45 per hour",
+            "fullDescription": "<mainTitle>Modification and Development of Existing Applications</mainTitle><paragraph>Modification and development of existing applications include improving functionality, fixing bugs, enhancing performance, and adapting software to changing business requirements. This service helps maintain the relevance and efficiency of your applications, ensuring they meet modern standards and needs.</paragraph><paragraph>Why is this necessary?</paragraph><list><listLine>Maintaining relevance: In a rapidly changing technological landscape, applications need regular updates to stay relevant and comply with modern standards. Modification helps your applications remain competitive.</listLine><listLine>Improving functionality: As the business grows and its needs change, there may be a need to add new features and capabilities to the existing application. Development allows the application to be adapted to current requirements.</listLine><listLine>Fixing bugs and vulnerabilities: During the operation of an application, errors and vulnerabilities may be identified that need to be promptly addressed. This helps ensure the stable and secure operation of the application.</listLine><listLine>Integration with new systems: As the business evolves, there may be a need to integrate the existing application with new systems and services. Modification ensures seamless interaction between different infrastructure components.</listLine><listLine>Performance improvement: Optimizing the code and improving the application's architecture enhances its performance, which is important for providing a fast and smooth user experience.</listLine></list>"
           }
         },
         "OUTSTAFFING": {
-          "SENIOR ROR РАЗРАБОТЧИК (ROR, PostgreSQL, MySQL, Vue.js)": {
+          "SENIOR ROR DEVELOPER (ROR, PostgreSQL, MySQL, Vue.js)": {
             "description": "Leads projects, designs architecture; Makes key technical decisions; Provides mentorship, explores new technologies",
-            "price": "75 per hour"
+            "price": "75 per hour",
+            "fullDescription": "<mainTitle>Senior Developer</mainTitle><paragraph>Experienced developer with deep knowledge and many years of experience with Ruby on Rails.</paragraph><paragraph>Responsibilities:</paragraph><listCircle><listLine>Developing and optimizing complex functional modules and components: Creating key functional parts of the application, improving existing code to enhance performance.</listLine><listLine>Solving architectural tasks and choosing technologies for the project: Defining the structure and technology of the project to ensure its scalability and flexibility.</listLine><listLine>Mentoring and training junior developers: Training and supporting less experienced team members, helping them grow.</listLine><listLine>Code review and ensuring high code quality: Reviewing and analyzing code written by other developers to ensure its quality and compliance with standards.</listLine></listCircle>"
           },
-          "Middle разработчик": {
+          "Middle DEVELOPER": {
             "description": "Works independently, manages projects; Solves problems, optimizes processes; Mentors junior developers",
-            "price": "55 per hour"
+            "price": "55 per hour",
+            "fullDescription": "<mainTitle>Middle Developer</mainTitle><paragraph>Developer with good knowledge and experience with Ruby on Rails, capable of independently solving most tasks.</paragraph><paragraph>Responsibilities:</paragraph><listCircle><listLine>Developing functional modules and components: Creating functional parts of the application, such as user interfaces and server logic.</listLine><listLine>Making improvements and fixing bugs: Optimizing code and fixing bugs to improve application performance.</listLine><listLine>Participating in code review and testing: Reviewing code from other developers and testing their own code to ensure its quality.</listLine><listLine>Collaborating with the team to implement the project: Working with other developers and specialists to successfully complete the project.</listLine></listCircle>"
           },
           "Junior+ Developer": {
             "description": "Completes tasks under supervision; Participates in training and development; Writes code, debugs issues",
-            "price": "35 per hour"
+            "price": "35 per hour",
+            "fullDescription": "<mainTitle>Junior+ Developer</mainTitle><paragraph>Entry-level developer with basic knowledge of Ruby on Rails, ready to learn and grow.</paragraph><paragraph>Responsibilities:</paragraph><listCircle><listLine>Performing simple tasks under the guidance of more experienced colleagues: Implementing simple functions and fixing small bugs under the supervision of senior developers.</listLine><listLine>Writing and testing code: Creating code for small tasks and conducting testing to ensure its functionality.</listLine><listLine>Fixing bugs and making minor improvements: Eliminating simple errors and making small improvements to the application.</listLine><listLine>Learning new technologies and practices: Continuously learning new technologies and development methodologies.</listLine></listCircle>"
           },
           "Chief Technical Officer (CTO)": {
             "description": "Develops and implements the company's strategic technical plans; Introduces new technologies to maintain product competitiveness; Leads engineering teams",
-            "price": "130 per hour"
+            "price": "130 per hour",
+            "fullDescription": "<mainTitle>Junior+ Developer</mainTitle><paragraph>Entry-level developer with basic knowledge of Ruby on Rails, ready to learn and grow.</paragraph><paragraph>Responsibilities:</paragraph><listCircle><listLine>Performing simple tasks under the guidance of more experienced colleagues: Implementing simple functions and fixing small bugs under the supervision of senior developers.</listLine><listLine>Writing and testing code: Creating code for small tasks and conducting testing to ensure its functionality.</listLine><listLine>Fixing bugs and making minor improvements: Eliminating simple errors and making small improvements to the application.</listLine><listLine>Learning new technologies and practices: Continuously learning new technologies and development methodologies.</listLine></listCircle>"
           },
           "Project Manager": {
             "description": "Develops project plans considering resources, timelines, and budget; Manages teams to achieve objectives; Ensures adherence to deadlines and budget constraints, minimizes risks",
-            "price": "80 per hour"
+            "price": "80 per hour",
+            "fullDescription": "<mainTitle>Project Manager</mainTitle><paragraph>Project management specialist responsible for planning and coordinating the team's work.</paragraph><paragraph>Responsibilities:</paragraph><listCircle><listLine>Planning and monitoring task completion: Creating and managing project plans, controlling deadlines and milestones.</listLine><listLine>Coordinating team work and interacting with the client: Organizing effective interaction between team members and the client.</listLine><listLine>Managing project deadlines and budget: Ensuring that the project is completed within budget and established deadlines.</listLine><listLine>Resolving organizational issues and problems: Addressing any arising problems and ensuring smooth team operation.</listLine></listCircle>"
           },
           "Team lead": {
             "description": "Coordinates and supports team operations; Defines technical solutions and standards; Develops the team's professional skills; Ensures adherence to development processes and task deadlines",
-            "price": "80 per hour"
+            "price": "80 per hour",
+            "fullDescription": "<mainTitle>Team Lead</mainTitle><paragraph>Leader of the development team responsible for coordinating and motivating the team.</paragraph><paragraph>Responsibilities:</paragraph><listCircle><listLine>Leading the development team: Organizing and coordinating the team's work to achieve common goals.</listLine><listLine>Developing and implementing best practices and standards: Ensuring the use of best development practices and quality standards.</listLine><listLine>Helping to solve technical problems: Supporting the team in solving complex technical issues.</listLine><listLine>Training and developing team members: Mentoring and professional development of team members.</listLine></listCircle>"
           },
           "DEVOPS": {
             "description": "Develops and implements automation; Sets up CI/CD to enhance code quality and release speed; Configures performance monitoring",
-            "price": "60 per hour"
+            "price": "60 per hour",
+            "fullDescription": "<mainTitle>DEVOPS</mainTitle><paragraph>Specialist in automation and optimization of development and application operation processes.</paragraph><paragraph>Responsibilities:</paragraph><listCircle><listLine>Setting up and maintaining project infrastructure: Ensuring stable operation of servers, databases, and other infrastructure components.</listLine><listLine>Automating deployment and testing processes: Implementing automated deployment and testing processes to increase efficiency.</listLine><listLine>Ensuring system security and performance: Setting up security measures and optimizing performance.</listLine><listLine>Monitoring and resolving operational issues: Continuously monitoring system performance and promptly addressing emerging problems.</listLine></listCircle>"
           },
           "QA Engineer": {
             "description": "Tests products to ensure compliance with requirements; Identifies and documents bugs; Develops test plans and scenarios",
-            "price": "35 per hour"
+            "price": "35 per hour",
+            "fullDescription": "<mainTitle>QA Engineer (Tester)</mainTitle><paragraph>Specialist in software testing and quality assurance.</paragraph><paragraph>Responsibilities:</paragraph><listCircle><listLine>Developing and executing test scenarios: Creating and executing scenarios to verify application functionality.</listLine><listLine>Automating testing: Implementing automated tests to increase testing process efficiency.</listLine><listLine>Finding and documenting bugs and errors: Identifying, documenting, and tracking bugs and errors.</listLine><listLine>Collaborating with developers to resolve identified issues: Working with developers to fix identified problems.</listLine></listCircle>"
           }
         }
       },
@@ -91,7 +106,7 @@
     },
     "OurCases": {
       "link": "our-cases",
-      "title": "OUR CASES",
+      "title": "Breakthrough Projects",
       "description": "Our projects are the best proof of our expertise",
       "responsiveDescription": "Our projects are the best proof of our expertise",
       "cases": {
@@ -129,7 +144,7 @@
     },
     "RoRAdvantages": {
       "link": "ror-advantages",
-      "title": "Benefits of Ruby on Rails",
+      "title": "The Power of Ruby on Rails",
       "advantages": {
         "SPEED of implementation": "Ruby on Rails allows us to significantly speed up the development process and turn ideas into functioning products, thanks to ready-made solutions for many tasks combined with our flexible methodologies, enabling us to launch your project faster than ever",
         "Database support": "Supports integration with widely-used database management systems like MySQL, PostgreSQL, and others, making it a versatile development solution",
@@ -137,17 +152,17 @@
       }
     },
     "OurApproach": {
-      "title": "Our Approach to Work",
+      "title": "Shaping the future<break></break> with each project",
       "approaches": {
         "Effective Management": "We use a version control system (Git) and provide access to our repository on platforms like GitHub or GitLab upon client request",
-        "Transparency in Work": "Using CI, Capistrano, and continuous deployment to a staging server keeps you fully informed about your project’s development process",
+        "Transparency in Work": "Using CI, Capistrano, and continuous deployment to a staging server keeps you fully informed about your project's development process",
         "Code Coverage for Projects": "We ensure complete code coverage of our projects with automated tests using Rspec, Capybara, and Factorybot",
         "Monitoring and Optimization": "We perform error monitoring and resolution using Sentry and carry out performance monitoring and optimization using New Relic"
       }
     },
     "AboutUs": {
       "link": "about-us",
-      "title": "about our company",
+      "title": "Our Digital World",
       "description": "Future Markt is a digital agency that was founded in 2011. We create decentralized applications and their interfaces, develop UX/UI designs, and marketing strategies to promote projects online",
       "responsiveDescription": "Future Markt is a digital agency that was founded in 2011. We create decentralized applications and their interfaces, develop UX/UI designs, and marketing strategies to promote projects online",
       "advantages": {
@@ -156,7 +171,7 @@
         "Complex tasks made easy": "We solve tasks of any complexity, including API development, large web application development, integration with external systems, and more"
       },
       "haveIdea": "Have an idea?",
-      "sayToUs": "Tell us about it, and we’ll bring it to life with Ruby on Rails",
+      "sayToUs": "Tell us about it, and we'll bring it to life with Ruby on Rails",
       "contactOnTG": "Contact on Telegram:",
       "contacts": {
         "Yaroslav": {
@@ -170,7 +185,7 @@
       }
     },
     "OtherServices": {
-      "title": "Our Other Services",
+      "title": "Other Services",
       "services": {
         "Web3 Project Development": {
           "desc": "Development of DeFi, DAO, dApp, Smart Contracts, Advising and Consulting, Token/Cryptocurrency Development",
@@ -185,19 +200,23 @@
     },
     "WeInMedia": {
       "link": "we-in-media",
-      "title": "We in the Media",
+      "title": "Media Hub",
       "articles": {
         "Powerful Framework for Creating Ruby APIs": {
           "img": "grape",
           "description": "If you're involved in web application or API development, you've probably heard of Grape — a powerful framework in the Ruby programming language",
-          "link": "https://teletype.in/@yegordv/WBkP1wGDHoc"
+          "link": "https://medium.com/@eg0rfull/grape-a-powerful-framework-for-building-apis-in-ruby-19ab8ee77d03"
         },
         "Chatbot Development Using Ruby": {
           "img": "robot",
           "description": "Ruby makes chatbot development quick and easy. In this article, we will explore the advantages of Ruby for chatbot development with code examples",
-          "link": "https://tproger.ru/articles/razrabotka-chat-botov-s-ispolzovaniem-ruby"
+          "link": "https://medium.com/@eg0rfull/developing-chatbots-using-ruby-8d6ca827924e"
         }
       },
+      "bannerTitleImg": "railsclub",
+      "bannerDescripImg": "telegram channel<breakMobile></breakMobile><breakMd></breakMd> about<breakLg></breakLg><break></break> ruby on rails",
+      "bannerTitle": "telegram channel about<breakMobile></breakMobile> ruby on rails - <breakLg></breakLg>railsclub",
+      "bannerDescrip": "Our staff also actively engages in<breakMobile></breakMobile> expert activities on Telegram.",
       "videoLink": "#",
       "readMore": "Read More"
     },
@@ -219,7 +238,7 @@
       "addresses": {
         "+7 999 136 6838": "Russia, Nizhny Novgorod, Rodionova 192B",
         "+972 54 9965034": "Israel 90435, Zeit Shemen St 2 Efrat",
-        "+1 414 212 5484": "United States of America, Continure, 1366 E Sumner St #1008, Hartford WI 53027"
+        "+1 414 212 5484": "United States of America 1366 E Sumner St, #1008, Hartford, WI 53027"
       }
     }
   }
