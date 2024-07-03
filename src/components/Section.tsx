@@ -1,19 +1,25 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React, { JSXElementConstructor, ReactElement, ReactNodeArray } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { affectBold700, ppNeueMont500 } from '@/utils/fonts';
 
 interface SectionProps {
   id: string;
-  header: string;
+  header:
+    | string
+    | ReactElement<any, string | JSXElementConstructor<any>>
+    | ReactNodeArray;
   adaptiveTitle?: React.ReactNode;
   lgTitle?: React.ReactNode;
   customHeader?: React.ReactNode;
   children: React.ReactNode;
+  customSectionStyles?: string;
   customContainerStyles?: string;
+  customHeaderStyles?: string;
   theme?: string;
+  threshold?: number;
 }
 
 const Section = ({
@@ -23,17 +29,16 @@ const Section = ({
   lgTitle,
   customHeader = undefined,
   children,
+  customSectionStyles,
   customContainerStyles,
+  customHeaderStyles,
   theme = "dark",
+  threshold = 0.02,
 }: SectionProps) => {
   const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.05,
+    // triggerOnce: true,
+    threshold: [threshold, 0.8],
   });
-
-  useEffect(() => {
-    console.log(inView);
-  }, [inView]);
 
   return (
     <section
@@ -42,11 +47,13 @@ const Section = ({
         theme === "dark"
           ? "bg-[#030303] text-[#F7F7F7]"
           : "bg-[#DFDFDF] text-[#030303]"
-      }`}
+      } ${customSectionStyles}`}
     >
       <div
         className={`max-w-[340px] md:max-w-[708px] lg:max-w-[964px] 2xl:max-w-[1300px] mx-auto transition-all duration-700 ${customContainerStyles} ${
-          inView ? "translate-y-[0px] opacity-100" : "translate-y-[100px] opacity-0"
+          inView
+            ? "translate-y-[0px] opacity-100"
+            : "translate-y-[100px] opacity-0"
         }`}
         ref={ref}
       >
@@ -65,7 +72,11 @@ const Section = ({
             ) : lgTitle ? (
               <>
                 <h1 className="hidden md:block">{header}</h1>
-                <h1 className="hidden lg:block xl:hidden">{lgTitle}</h1>
+                <h1
+                  className={`hidden lg:block xl:hidden ${customHeaderStyles}`}
+                >
+                  {lgTitle}
+                </h1>
               </>
             ) : (
               <h1>{header}</h1>
