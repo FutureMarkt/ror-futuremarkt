@@ -1,21 +1,23 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext } from 'react';
 
 import { ppNeueMont500 } from '@/utils/fonts';
 
 import LocaleSwitcher from './LocalSwitcher';
-import { MenuContext } from './MenuContext';
 
-const DropdownMenu = () => {
+const DropdownMenu = ({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const headerIntl = useTranslations("Index.Header");
-
-  const { isOpen, setIsOpen } = useContext(MenuContext);
 
   return (
     <div
-      className={`absolute w-full h-[100vh] z-20 transition-all text-[#F7F7F7] bg-[#030303] overflow-hidden ${
+      className={`fixed w-full h-[100vh] z-20 transition-all duration-500 text-[#F7F7F7] bg-[#030303] overflow-hidden ${
         isOpen ? "top-0" : "top-[-100vh]"
       }`}
     >
@@ -51,7 +53,7 @@ const DropdownMenu = () => {
           </div>
 
           <a
-            href="https://t.me/yarkoch"
+            href="https://t.me/vitkoz"
             target="_blank"
             className={`text-[#FFDE9F] text-xs md:text-lg flex items-center cursor-pointe uppercase ${ppNeueMont500.className}`}
           >
