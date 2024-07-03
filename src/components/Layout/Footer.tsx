@@ -1,5 +1,6 @@
 "use client";
 
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'use-intl';
@@ -7,6 +8,8 @@ import { useTranslations } from 'use-intl';
 import { affectBold700, affectLight300, ppNeueMont500 } from '@/utils/fonts';
 
 const Footer = () => {
+  const locale = useLocale();
+
   const footerIntl = useTranslations("Index.Footer");
 
   return (
@@ -34,20 +37,42 @@ const Footer = () => {
             <p className="mt-[10px] md:mt-3">
               {footerIntl.raw("legalEntityInfo")}
             </p>
-            <p className="leading-3 text-[12px] md:text-xs mt-[10px] md:mt-3 text-[#7F7F7F]">
+            <a
+              href="https://futuremarkt.com/privacy"
+              target="_blank"
+              className="leading-3 text-[12px] md:text-xs mt-[10px] md:mt-3 text-[#7F7F7F]"
+            >
               {footerIntl.raw("privacy")}
-            </p>
+            </a>
           </div>
 
-          <div className="md:w-[205px] lg:w-[303px] 2xl:max-w-[185px] text-xs md:text-lg 2xl:text-right">
+          <div className="md:w-[205px] lg:w-[303px] text-xs md:text-lg 2xl:text-right">
             <p className="leading-[14px]">
               {footerIntl.raw("forAllQuestions")}
             </p>
-            <p className="mt-3 leading-[14px] md:leading-5">
-              {footerIntl.raw("@yarkoch")}
-              <br />
-              @yarkoch
-            </p>
+            <div className="flex flex-col">
+              {" "}
+              <a
+                href={`tel:${
+                  locale === "he" ? "+972-54-9965034" : "+7 (999)-136-6838"
+                }`}
+                target="_blank"
+                className="mt-3 leading-[14px] md:leading-5"
+              >
+                {locale === "he" ? "+972-54-9965034" : "+7 (999)-136-6838"}
+              </a>
+              <a
+                href={`${
+                  locale === "he"
+                    ? "https://t.me/vitkoz"
+                    : "https://t.me/yarkoch"
+                }`}
+                target="_blank"
+                className="leading-[14px] md:leading-5"
+              >
+                {locale === "he" ? "@vitkoz" : "@yarkoch"}
+              </a>
+            </div>
           </div>
         </div>
 
@@ -57,7 +82,7 @@ const Footer = () => {
           <p className={``}>
             © Future Markt 2012–2024 {footerIntl.raw("rights")}
           </p>
-          <Link href="#" className="flex items-center">
+          <Link href="#header" className="flex items-center">
             <Image
               src="/arrow-up-dark.png"
               width={12}
@@ -79,7 +104,15 @@ const Footer = () => {
                   index === 2 ? "md:justify-self-end" : ""
                 } ${ppNeueMont500.className}`}
               >
-                <p>{addr as string}</p>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    addr as string
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {addr as string}
+                </a>
                 <a href={`tel:${phone}`} className="mt-[7px] md:mt-0">
                   {phone}
                 </a>
