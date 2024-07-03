@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import AboutUs from '@/components/Layout/AboutUs';
 import Footer from '@/components/Layout/Footer';
 import Header from '@/components/Layout/Header';
@@ -12,7 +14,9 @@ export default function Home() {
       <Header />
       <main>
         <OurHelp />
-        <OurCases />
+        <Suspense>
+          <OurCases />
+        </Suspense>
         <AdvantagesROR />
         <AboutUs />
         <WeInMedia />
