@@ -94,6 +94,12 @@ const RORAdvantages = () => {
                   <br />
                 </>
               ),
+              breakLg: (chunks) => (
+                <>  
+                  {chunks}
+                  <br className='lg:hidden'></br>
+                </>
+              )
             })}
           </h1>
 

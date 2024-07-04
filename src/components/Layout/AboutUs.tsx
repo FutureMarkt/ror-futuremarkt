@@ -17,7 +17,14 @@ const AboutUs = () => {
   const servicesIntl = useTranslations("Index.OtherServices");
 
   const id = "about-us";
-  const header = aboutUsIntl.raw("title");
+  const header = aboutUsIntl.rich("title", {
+    breakMobile: (chunks) => (
+      <>
+        {chunks}
+        <br className="md:hidden"></br>
+      </>
+    ),
+  });
 
   return (
     <Section id={id} header={header}>
