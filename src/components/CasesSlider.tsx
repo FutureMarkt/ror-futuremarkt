@@ -30,7 +30,7 @@ const CasesSlider = ({ modalContent, setModalContent }: CasesSliderProps) => {
   const ourCasesIntl = useTranslations("Index.OurCases");
 
   const casesList = Object.entries(ourCasesIntl.raw("cases") as Cases).map(
-    ([title, { description, img, goal, fullDescription }], index) => (
+    ([title, { description, img, goal, fullDescription, link }], index) => (
       <div
         key={index}
         className={`w-[330px] md:w-[648px] lg:w-[411px] 2xl:w-[420px] transition-all duration-500 cursor-pointer`}
@@ -126,13 +126,16 @@ const CasesSlider = ({ modalContent, setModalContent }: CasesSliderProps) => {
 
               <div className="text-lg leading-5 text-[#FFDE9F] uppercase z-30">
                 <p className="flex items-center">
-                  [{ourCasesIntl.raw("learnMore")}{" "}
+                  [
+                  {link
+                    ? ourCasesIntl.raw("goToProject")
+                    : ourCasesIntl.raw("learnMore")}{" "}
                   <Image
                     src={"/arrow-side-yellow.png"}
                     width={16}
                     height={16}
                     alt="arrow"
-                    className='ml-[6px]'
+                    className="ml-[6px]"
                   />
                   ]
                 </p>
