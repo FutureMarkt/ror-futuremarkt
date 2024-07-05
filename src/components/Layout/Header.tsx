@@ -1,21 +1,25 @@
 "use client";
 
-import anime from 'animejs';
-import { useLocale, useTranslations } from 'next-intl';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
+import anime from "animejs";
+import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 import {
-    affect300, affect700, affectBold700, affectLight300, ppNeueMont500, ppNeueMontLight500
-} from '@/utils/fonts';
+  affect300,
+  affect700,
+  affectBold700,
+  affectLight300,
+  ppNeueMont500,
+  ppNeueMontLight500,
+} from "@/utils/fonts";
 
-import DropdownMenu from '../DropdownMenu';
-import LocaleSwitcher from '../LocalSwitcher';
+import DropdownMenu from "../DropdownMenu";
+import LocaleSwitcher from "../LocalSwitcher";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-
   const locale = useLocale();
   const headerIntl = useTranslations("Index.Header");
 

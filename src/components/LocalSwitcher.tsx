@@ -15,7 +15,7 @@ const LocaleSwitcher = () => {
   useClickAway(localeSwitcherRef, () => setIsOpenDropdown(false))
 
   return (
-    <div className="flex flex-col items-center justify-center mt-[60px] md:mt-[50px] xl:mt-0 relative">
+    <div className="flex flex-col items-center justify-center mt-[60px] md:mt-[50px] xl:mt-0 relative" ref={localeSwitcherRef}>
       <p
         className={`text-lg md:text-[40px] lg:text-[48px] xl:text-[20px] leading-[24px] md:leading-[40px] flex gap-[6px] items-center uppercase w-[56px] xl:w-[44px] cursor-pointer ${affect700.className}`}
         onClick={() => setIsOpenDropdown(!isOpenDropdown)}
@@ -36,7 +36,6 @@ const LocaleSwitcher = () => {
         className={`flex-col items-center transition-all mt-2 xl:mt-0 ${
           isOpenDropdown ? "flex" : "hidden"
         }`}
-        ref={localeSwitcherRef}
       >
         <div className="absolute z-10 rounded-[5px] bg-[#030303] w-[64px] xl:w-[48px] p-2 pb-4 xl:p-1 border flex flex-col gap-2 xl:gap-0">
           {locales.map((localeItem) => (
