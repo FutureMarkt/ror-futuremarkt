@@ -34,6 +34,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={direction}>
       <head>
+        <title>{metadata.title as string}</title>
         <meta name="description" content={metadata.description as string} />
         <meta name="keywords" content={metadata.keywords as string} />
         <meta name="robots" content={metadata.robots as string} />
