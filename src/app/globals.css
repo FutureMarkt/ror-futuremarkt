@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Local fonts via @font-face (bypasses fontkit/Node 23 OTF issue) */
+@font-face {
+  font-family: 'Affect';
+  src: url('/fonts/affect_light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Affect';
+  src: url('/fonts/affect.otf') format('opentype');
+  font-weight: 300 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Affect';
+  src: url('/fonts/affect_bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/pp-neue-montreal-mono-book.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontrealMono-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.font-affect-light { font-family: 'Affect', sans-serif; font-weight: 300; }
+.font-affect { font-family: 'Affect', sans-serif; font-weight: 300; }
+.font-affect-700 { font-family: 'Affect', sans-serif; font-weight: 700; }
+.font-affect-bold { font-family: 'Affect', sans-serif; font-weight: 700; }
+.font-pp-mont-light { font-family: 'PP Neue Montreal', monospace; font-weight: 500; }
+.font-pp-mont { font-family: 'PP Neue Montreal', monospace; font-weight: 500; }
+
 * {
   scroll-behavior: smooth;
 }

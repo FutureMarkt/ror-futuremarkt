@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSXElementConstructor, ReactElement, ReactNodeArray } from 'react';
+import React, { JSXElementConstructor, ReactElement } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { affectBold700, ppNeueMont500 } from '@/utils/fonts';
@@ -10,7 +10,7 @@ interface SectionProps {
   header:
     | string
     | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactNodeArray;
+    | React.ReactNode;
   adaptiveTitle?: React.ReactNode;
   lgTitle?: React.ReactNode;
   customHeader?: React.ReactNode;

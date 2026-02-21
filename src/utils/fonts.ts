@@ -1,31 +1,9 @@
-import localFont from 'next/font/local';
-
-export const affectLight300 = localFont({
-  src: "../../public/fonts/affect_light.otf",
-  weight: "300",
-});
-
-export const affect300 = localFont({
-  src: "../../public/fonts/affect.otf",
-  weight: "300",
-});
-
-export const affect700 = localFont({
-  src: "../../public/fonts/affect.otf",
-  weight: "700",
-});
-
-export const affectBold700 = localFont({
-  src: "../../public/fonts/affect_bold.otf",
-  weight: "700",
-});
-
-export const ppNeueMontLight500 = localFont({
-  src: "../../public/fonts/pp-neue-montreal-mono-book.otf",
-  weight: "500",
-});
-
-export const ppNeueMont500 = localFont({
-  src: "../../public/fonts/PPNeueMontrealMono-Medium.otf",
-  weight: "500",
-});
+/**
+ * Font utilities - use @font-face from globals.css (bypasses fontkit/Node 23 OTF issue)
+ */
+export const affectLight300 = { className: 'font-affect-light' };
+export const affect300 = { className: 'font-affect' };
+export const affect700 = { className: 'font-affect-700' };
+export const affectBold700 = { className: 'font-affect-bold' };
+export const ppNeueMontLight500 = { className: 'font-pp-mont-light' };
+export const ppNeueMont500 = { className: 'font-pp-mont' };

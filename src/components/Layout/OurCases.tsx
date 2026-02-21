@@ -46,7 +46,7 @@ const OurCases = () => {
     }
   }, [hasClickedOutside]);
 
-  const customHeader: JSX.Element = (
+  const customHeader: React.ReactElement = (
     <div className={`text-center`}>
       <h1
         className={`uppercase leading-[40px] md:leading-[64px] text-[40px] md:text-2xl ${affectBold700.className}`}
